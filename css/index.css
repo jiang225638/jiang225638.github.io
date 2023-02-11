@@ -1400,7 +1400,7 @@ input::placeholder {
   z-index: -999;
   width: 100%;
   height: 100%;
-  background: url(https://images.cnblogs.com/cnblogs_com/kafuuchinoQWQ/1507356/o_544.jpg);
+  background: url(https://p6-tt.byteimg.com/origin/pgc-image/14fab2a00fe144b5be663b85f7992014?from=pc);
   background-attachment: local;
   background-position: center;
   background-size: cover;
@@ -3191,6 +3191,13 @@ h1.page-title + .tag-cloud-list {
   background-attachment: scroll;
   background-position: bottom;
   background-size: cover;
+}
+#footer:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  content: '';
 }
 #footer-wrap {
   position: relative;
