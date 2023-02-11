@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Front-matter配置</title>
+      <link href="/2023/02/11/hello-world/"/>
+      <url>/2023/02/11/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Front-matter<br>Front-matter 是 markdown 文件最上方以—分隔的区域，用于指定个别档案的变数。</p><p>Page Front-matter 用于页面配置<br>Post Front-matter 用于文章页配置</p><p>title:<br>date:<br>updated:<br>type:<br>comments:<br>description:<br>keywords:<br>top_img:<br>mathjax:<br>katex:<br>aside:<br>aplayer:<br>highlight_shrink:</p><p>写法解释<br>title【必需】页面标题<br>date【必需】页面创建日期<br>type【必需】标籤、分类和友情链接三个页面需要配置<br>updated【可选】页面更新日期<br>description【可选】页面描述<br>keywords【可选】页面关键字<br>comments【可选】显示页面评论模块(默认 true)<br>top_img【可选】页面顶部图片<br>mathjax【可选】显示<br>mathjax(当设置 mathjax 的 per_page: false 时，才需要配置，默认 false)<br>katex【可选】显示<br>katex(当设置 katex 的 per_page: false 时，才需要配置，默认 false)<br>aside【可选】显示侧边栏 (默认 true)<br>aplayer【可选】在需要的页面加载 aplayer 的 js 和 css,请参考文章下面的音乐 配置<br>highlight_shrink【可选】配置代码框是否展开(true/false)(默认为设置中 highlight_shrink 的配置)<br>Post Front-matter</p><p>title:<br>date:<br>updated:<br>tags:<br>categories:<br>keywords:<br>description:<br>top_img:<br>comments:<br>cover:<br>toc:<br>toc_number:<br>toc_style_simple:<br>copyright:<br>copyright_author:<br>copyright_author_href:<br>copyright_url:<br>copyright_info:<br>mathjax:<br>katex:<br>aplayer:<br>highlight_shrink:<br>aside:</p><p>写法解释<br>title【必需】文章标题<br>date【必需】文章创建日期<br>updated【可选】文章更新日期<br>tags【可选】文章标籤<br>categories【可选】文章分类<br>keywords【可选】文章关键字<br>description【可选】文章描述<br>top_img【可选】文章顶部图片<br>cover【可选】文章缩略图(如果没有设置 top_img,文章页顶部将显示缩略图，可设为 false/图片地址/留空)<br>comments【可选】显示文章评论模块(默认 true)<br>toc【可选】显示文章<br>TOC(默认为设置中 toc 的 enable 配置)<br>toc_number【可选】显示<br>toc_number(默认为设置中 toc 的 number 配置)<br>toc_style_simple【可选】显示 toc 简洁模式<br>copyright【可选】显示文章版权模块(默认为设置中 post_copyright 的 enable 配置)<br>copyright_author【可选】文章版权模块的文章作者<br>copyright_author_href【可选】文章版权模块的文章作者链接<br>copyright_url【可选】文章版权模块的文章连结链接<br>copyright_info【可选】文章版权模块的版权声明文字<br>mathjax【可选】显示<br>mathjax(当设置 mathjax 的 per_page: false 时，才需要配置，默认 false)<br>katex【可选】显示<br>katex(当设置 katex 的 per_page: false 时，才需要配置，默认 false)<br>aplayer【可选】在需要的页面加载 aplayer 的 js 和 css,请参考文章下面的音乐 配置<br>highlight_shrink【可选】配置代码框是否展开(true/false)(默认为设置中 highlight_shrink 的配置)<br>aside【可选】显示侧边栏 (默认 true)</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
