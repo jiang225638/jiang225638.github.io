@@ -3,8 +3,8 @@ layout: home
 layoutClass: 'm-home-layout'
 
 hero:
-  name: 哈哈哈
-  text: 前端导航模板
+  name: 飞上天与太阳肩并肩
+  text: 的记录
   tagline: 基于 VitePress 的个人前端导航页面模板
   image:
     src: /logo.png
