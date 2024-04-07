@@ -13,14 +13,14 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
   },
   { text: '前端导航', link: '/nav/' },
-  { text: '茂茂主页', link: 'https://fe-mm.com' },
+  { text: '主页', link: '' },
   {
-    text: '茂茂物语',
-    link: 'https://notes.fe-mm.com',
+    text: '物语',
+    link: '',
   },
-  { text: 'mmPlayer', link: 'https://netease-music.fe-mm.com' },
+  { text: '导航5', link: '' },
   {
-    text: '油猴脚本',
+    text: '导航6',
     // link: 'https://github.com/maomao1996/tampermonkey-scripts',
     items: [
       { text: '测试1', link: 'https://www.baidu.com' },
@@ -28,7 +28,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     ],
   },
   {
-    text: '油猴脚本',
-    link: 'https://github.com/maomao1996/tampermonkey-scripts',
+    text: '导航7',
+    link: '',
   },
 ]
