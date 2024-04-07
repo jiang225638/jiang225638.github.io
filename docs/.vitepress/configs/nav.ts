@@ -12,4 +12,8 @@ export const nav: DefaultTheme.Config['nav'] = [
     text: '油猴脚本',
     link: 'https://github.com/maomao1996/tampermonkey-scripts',
   },
+  {
+    text: '油猴脚本',
+    link: 'https://github.com/maomao1996/tampermonkey-scripts',
+  },
 ]
