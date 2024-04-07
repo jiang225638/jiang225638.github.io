@@ -1,6 +1,17 @@
 import type { DefaultTheme } from 'vitepress'
 
 export const nav: DefaultTheme.Config['nav'] = [
+  {
+    text: '记录',
+    items: [
+      { text: 'js', link: '/js/' },
+      { text: 'css', link: '' },
+      { text: 'html', link: '' },
+      { text: 'vue', link: '' },
+      { text: 'react', link: '' },
+      { text: 'nestjs', link: '' },
+    ],
+  },
   { text: '前端导航', link: '/nav/' },
   { text: '茂茂主页', link: 'https://fe-mm.com' },
   {
