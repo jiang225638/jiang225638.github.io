@@ -12,7 +12,6 @@ export const nav: DefaultTheme.Config['nav'] = [
       { text: 'nestjs', link: '' },
     ],
   },
-  { text: '前端导航', link: '/nav/' },
   { text: '主页', link: '' },
   {
     text: '物语',
@@ -31,4 +30,5 @@ export const nav: DefaultTheme.Config['nav'] = [
     text: '导航7',
     link: '',
   },
+  { text: '前端网址导航', link: '/nav/' },
 ]

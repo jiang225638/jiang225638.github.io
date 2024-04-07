@@ -10,13 +10,13 @@ hero:
     src: /logo.png
     alt: 茂茂物语
   actions:
-    - text: 茂茂物语
-      link: https://notes.fe-mm.com
+    - text: 物语
+      link:
     - text: 前端导航
       link: /nav/
       theme: alt
     - text: mmPlayer
-      link: https://netease-music.fe-mm.com
+      link:
     - text: 测试页
       link: /test
       theme: alt
