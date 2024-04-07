@@ -10,7 +10,11 @@ export const nav: DefaultTheme.Config['nav'] = [
   { text: 'mmPlayer', link: 'https://netease-music.fe-mm.com' },
   {
     text: '油猴脚本',
-    link: 'https://github.com/maomao1996/tampermonkey-scripts',
+    // link: 'https://github.com/maomao1996/tampermonkey-scripts',
+    items: [
+      { text: '测试1', link: 'https://www.baidu.com' },
+      { text: '测试2', link: 'https://www.baidu.com' },
+    ],
   },
   {
     text: '油猴脚本',
