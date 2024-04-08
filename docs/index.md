@@ -3,51 +3,51 @@ layout: home
 layoutClass: 'm-home-layout'
 
 hero:
-  name: 飞上天与太阳肩并肩
-  text: 的记录
-  tagline: 基于 VitePress 的个人前端导航页面模板
+  name: 点点滴滴
+  text: 
+  tagline: 生命是不倒行的，也不与昨日一同停留。
   image:
-    src: /logo.png
+    src: /logo1.gif
     alt: 物语
   actions:
-    - text: 物语
+    - text: one
       link:
-    - text: 前端导航
+    - text: two
       link: /nav/
       theme: alt
-    - text: mmPlayer
+    - text: three
       link:
-    - text: 测试页
+    - text: four
       link: /test
       theme: alt
 features:
   - icon: 📖
-    title: 前端物语
+    title: 常用知识点
     details: 整理前端常用知识点<small>（面试八股文）</small><br />如有异议按你的理解为主，不接受反驳
     link: 
-    linkText: 前端常用知识
+    linkText: 原理解读
   - icon: 📘
     title: 源码阅读
     details: 了解各种库的实现原理<br />学习其中的小技巧和冷知识
     link: 
     linkText: 源码阅读
   - icon: 💡
-    title: Workflow
+    title: 工作经验
     details: 在工作中学到的一切<small>（常用库/工具/奇淫技巧等）</small><br />配合 CV 大法来更好的摸鱼
     link: 
     linkText: 常用工具库
   - icon: 🧰
     title: 提效工具
     details: 工欲善其事，必先利其器<br />记录开发和日常使用中所用到的软件、插件、扩展等
-    link: https://notes.fe-mm.com/efficiency/online-tools
+    link: 
     linkText: 提效工具
   - icon: 🐞
     title: 踩坑记录
     details: 那些年我们踩过的坑<br />总有一些让你意想不到的问题
-    link: https://notes.fe-mm.com/pit/npm
+    link: 
     linkText: 踩坑记录
   - icon: 💯
-    title: 吾志所向，一往无前。
+    title: 只要你有一件合理的事去做，你的生活就会显得特别美好 。
     details: '<small class="bottom-small">一个想躺平的小开发</small>'
     link: 
 ---
