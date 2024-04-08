@@ -1,4 +1,4 @@
----
+<!-- ---
 layoutClass: m-nav-layout
 outline: [2, 3, 4]
 ---
@@ -12,6 +12,20 @@ import { NAV_DATA } from './data'
 
 js 测试页
 
-<!-- <MNavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/> -->
+<MNavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>
 
-<br />
+<br /> -->
+# 记录
+
+## 12321
+
+<!-- ![medium-zoom](/assets/js/logo.png) -->
+
+## 123123123
+
+```vue preview
+<template>
+  <div class="flex-row-center rounded-lg w-full h-40 bg-blue-500">vue 组件预览测试</div>
+</template>
+```
+

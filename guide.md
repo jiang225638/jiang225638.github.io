@@ -23,9 +23,9 @@ hero:
   tagline: 使用 VitePress 打造个人前端导航  //第三行小注内容
   image:
     src: /logo.png //页面大图地址（图像最好切圆后使用）
-    alt: 茂茂物语
+    alt: 物语
   actions:  //跳转按钮，可按需增减
-    - text: 茂茂物语
+    - text: 物语
       link: https://notes.fe-mm.com
     - text: 前端导航
       link: /nav/
@@ -51,7 +51,7 @@ features:
 export const nav: DefaultTheme.Config['nav'] = [
   { text: '个人主页', link: 'https://fe-mm.com' }, //切行无影响
   {
-    text: '茂茂物语', //显示文本
+    text: '物语', //显示文本
     link: 'https://notes.fe-mm.com', //链接
   },
 ]
@@ -145,10 +145,10 @@ Nav 页本身属于 MD 文件渲染，因此除引用的 data 文件用于数据
 
 <br />
 
-::: tip
-该导航由 [maomao](https://github.com/maomao1996) 开发，如有引用、借鉴的请保留版权声明：<https://github.com/maomao1996/vitepress-nav-template>
-:::  //引用Notes提示块
-```
+// ::: tip
+// 该导航由 [maomao](https://github.com/maomao1996) 开发，如有引用、借鉴的请保留版权声明：<https://github.com/maomao1996/vitepress-nav-template>
+// :::  //引用Notes提示块
+// ```
 
 **2.2 其他部分**：
 
