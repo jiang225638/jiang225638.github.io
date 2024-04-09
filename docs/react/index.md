@@ -15,7 +15,7 @@ js 测试页
 <MNavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>
 
 <br /> -->
-# JavaScript
+# React
 
 ## 12321
 
@@ -25,7 +25,7 @@ js 测试页
 
 ```vue preview
 <template>
-  <div class="flex-row-center rounded-lg w-full h-40 bg-blue-500">js</div>
+  <div class="flex-row-center rounded-lg w-full h-40 bg-blue-500">vue 组件预览测试</div>
 </template>
 ```
 
