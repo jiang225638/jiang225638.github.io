@@ -11,8 +11,8 @@ export default defineConfig({
   base: APP_BASE_PATH ? `/${APP_BASE_PATH}/` : '/',
 
   lang: 'zh-CN',
-  title: '物语',
-  description: '的成长之路，包含前端常用知识、源码阅读笔记、各种奇淫技巧、日常提效工具等',
+  title: '想躺不敢躺',
+  description: '啥都不会，只想躺平，看看小说，听听音乐，晒晒太阳',
   head,
 
   lastUpdated: true,
@@ -27,7 +27,7 @@ export default defineConfig({
   themeConfig: {
     i18nRouting: false,
 
-    logo: '/logo.png',
+    logo: '/logo1.gif',
 
     nav,
     sidebar,
@@ -37,11 +37,11 @@ export default defineConfig({
       label: '本页目录',
     },
 
-    socialLinks: [{ icon: 'github', link: '' }],
+    // socialLinks: [{ icon: 'github', link: '' }],
 
     footer: {
-      message: '12321',
-      copyright: '1231231',
+      message: '别看了',
+      copyright: '没了',
     },
 
     darkModeSwitchLabel: '外观',
