@@ -15,7 +15,7 @@ js 测试页
 <MNavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>
 
 <br /> -->
-# CSS
+# 死记硬背
 
 ## 12321
 
