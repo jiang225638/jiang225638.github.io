@@ -14,14 +14,7 @@ export const nav: DefaultTheme.Config['nav'] = [
   },
   {
     text: '阅尽繁华',
-    items: [
-      { text: 'js', link: '/js/' },
-      { text: 'css', link: '' },
-      { text: 'html', link: '' },
-      { text: 'vue', link: '' },
-      { text: 'react', link: '' },
-      { text: 'nestjs', link: '' },
-    ],
+    items: [{ text: '读过的精彩', link: '/excellentArticle/' }],
   },
   // { text: '导航3', link: '' },
   // {

@@ -13,7 +13,7 @@ export const NAV_DATA: NavData[] = [
         icon: 'https://caniuse.com/img/favicon-128.png',
         title: 'Can I use',
         desc: '前端 API 兼容性查询',
-        link: '/js/',
+        link: 'https://caniuse.com',
       },
       {
         icon: 'https://tinypng.com/images/apple-touch-icon.png',
