@@ -3,9 +3,9 @@ layout: home
 layoutClass: 'm-home-layout'
 
 hero:
-  name: 点点滴滴
+  name: 正在装修中。。。
   text: 
-  tagline: 生命是不倒行的，也不与昨日一同停留。
+  tagline:  如果你遇到了有点不可思议又让你困扰的事，不妨去探一探究竟。
   image:
     src: /logo1.gif
     alt: 生命不息，牛马不止
