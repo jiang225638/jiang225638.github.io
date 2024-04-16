@@ -17,6 +17,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '2024-04-15',
           link: '/excellentArticle/2024-04-15/',
         },
+        {
+          text: '2024-04-16',
+          link: '/excellentArticle/2024-04-16/',
+        },
       ],
     },
   ],
