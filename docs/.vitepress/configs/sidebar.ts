@@ -24,4 +24,15 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       ],
     },
   ],
+  '/roteLearning/': [
+    {
+      text: '需要死记硬背的八股',
+      items: [
+        {
+          text: 'vue',
+          link: '/roteLearning/vue/',
+        },
+      ],
+    },
+  ],
 }
