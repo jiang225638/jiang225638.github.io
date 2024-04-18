@@ -58,7 +58,7 @@
 
 map()若要渲染元素数组，你可以使用该方法循环访问数组并返回一个新的 React 元素数组。  
 
-![![medium-zoom]](/assets/roteLearning/react/640.png) 
+![medium-zoom](/assets/roteLearning/react/640.png) 
 
 ###  
 
@@ -74,12 +74,12 @@ map()若要渲染元素数组，你可以使用该方法循环访问数组并返
 
 
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250621-1.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250621-1.png)
 
 
 另一方面，不受控制的组件使用 refs 或其他方法在内部管理自己的状态。它们独立存储和更新其状态，而不依赖于 props 或回调。父组件对不受控制的组件的状态的控制较少。  
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250621-2.png)     
+![medium-zoom](/assets/roteLearning/react/640-1713417250621-2.png)     
 
 ### **5. 基于类的 React 组件和函数式 React 组件有什么区别？** 
 
@@ -89,11 +89,11 @@ map()若要渲染元素数组，你可以使用该方法循环访问数组并返
 
 React.Component基于类的组件被定义为 ES6 类并扩展该类。他们使用render该方法返回定义组件输出的 JSX （JavaScript XML）。类组件可以通过this.state和this.setState()访问组件生命周期方法和状态管理。  
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250621-3.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250621-3.png)
 
 另一方面，功能组件被定义为简单的 JavaScript 函数。它们将 props 作为参数并直接返回 JSX。功能组件无权访问生命周期方法或状态。然而，随着 React 16.8 中 React Hooks 的引入，功能组件现在可以管理状态并使用其他功能，例如上下文当中的效果展示。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250621-4.png)  
+![medium-zoom](/assets/roteLearning/react/640-1713417250621-4.png)  
 
 一般来说，功能组件被认为更简单，更易于阅读和测试。建议尽可能使用功能组件，除非对基于类的组件有特定需求。
 
@@ -125,7 +125,7 @@ React.Component基于类的组件被定义为 ES6 类并扩展该类。他们使
 
 useState返回一个状态值和一个用于更新它的函数。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250621-5.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250621-5.png)
 
 在初始呈现期间，返回的状态与作为第一个参数传递的值匹配。该函数用于更新状态。它将新的状态值作为参数，并对组件的重新渲染进行排队。该函数还可以接受回调函数作为参数，该函数将以前的状态值作为参数。  
 
@@ -143,7 +143,7 @@ useEffect钩子允许你在功能组件中执行副作用。
   
 相反，建议使用 useEffect。传递给 useEffect 的函数将在渲染提交到屏幕后执行，或者如果将依赖项数组作为第二个参数传递，则每次其中一个依赖项更改时都会调用该函数。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-6.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-6.png)
 
 
 
@@ -156,7 +156,7 @@ useEffect钩子允许你在功能组件中执行副作用。
   
 为此，传递给useEffect的函数可以返回一个清理函数。清理功能在从用户界面中删除组件之前运行，以防止内存泄漏。此外，如果组件多次渲染（通常如此），则在执行下一个效果之前，将清除上一个效果。  
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-7.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-7.png)
 
 ###  
 
@@ -166,7 +166,7 @@ useEffect钩子允许你在功能组件中执行副作用。
 
 Props 是从父级传递给组件的数据。道具是固定的，不能更改。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-8.png) 
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-8.png) 
 
 
 
@@ -194,7 +194,7 @@ Props 是从父级传递给组件的数据。道具是固定的，不能更改�
 
 reducer 是一个纯函数，它将状态和动作作为参数。在 reducer 内部，我们跟踪接收到的动作的类型，并根据它修改状态并返回一个新的状态对象。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-9.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-9.png)
 
 ### **14. 什么是Action，如何在 Redux 中更改状态？** 
 
@@ -202,11 +202,11 @@ reducer 是一个纯函数，它将状态和动作作为参数。在 reducer 内
 
 Action 是一个简单的 JavaScript 对象，它必须具有具有类型字段   
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-10.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-10.png)
 
 你也还可以选择添加一些数据作为有效负载。为了更改状态，必须调用调度函数，我们将操作传递给该函数
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-11.png)     
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-11.png)     
 
 ### **15. Redux 实现了哪种模式？** 
 
@@ -238,7 +238,7 @@ Mobx提供可观测和计算等装饰器，以定义可观测状态和反应函�
 
 通过使用observable修饰器将变量定义为可观察变量，可以访问处于状态中的变量。下面是一个示例：
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-12.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-12.png)
 
 在本例中，myVariable被定义为使用observable装饰器的可观察对象。然后，您可以使用store.myVariable访问变量。对myVariable所做的任何更改都将自动触发依赖组件或反应的更新。
 
@@ -262,11 +262,11 @@ Redux 是一个更简单、更固执己见的状态管理库，它遵循严格�
 
 默认情况下，以下语法用于在 react 中创建元素。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-13.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-13.png)
 
 通常来看
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-14.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-14.png)
 
 这正是标记所称的 jsx。这是一种语言扩展，简化了对代码和开发的感知。  
 
@@ -276,7 +276,7 @@ Redux 是一个更简单、更固执己见的状态管理库，它遵循严格�
 
 道具钻取是指通过多层嵌套组件传递道具的过程，即使一些中间组件不直接使用这些道具。这可能会导致代码结构复杂而繁琐。  
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-15.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-15.png)
 
 在此示例中，即使 ChildA 不直接使用该 prop，该 prop 也会从Parent 组件传递到 ChildA，然后从 ChildA 传递到 ChildB。当存在多个嵌套级别或需要由组件树中更下方的组件访问数据时，这可能会成为问题。它会使代码更难维护和理解。
 
@@ -288,11 +288,11 @@ Redux 是一个更简单、更固执己见的状态管理库，它遵循严格�
 
 可以使用任何条件运算符，包括三元运算符。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-16.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-16.png)
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-17.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-17.png)
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-18.png)  
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-18.png)  
 
 ### **23. useMemo 的用途是什么，它是如何工作的？** 
 
@@ -304,7 +304,7 @@ useMemo用于缓存和记忆计算。
 传递 creating 函数和依赖项数组。仅当任何依赖项的值发生更改时，才会重新计算记忆值。这种优化有助于避免每次渲染时成本高昂的计算。     
 对于第一个参数，该函数接受执行计算的回调，对于第二个依赖项数组，该函数仅在至少一个依赖项发生更改时才会重新执行计算。  
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-19.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-19.png)
 
 ###  
 
@@ -316,7 +316,7 @@ useMemo用于缓存和记忆计算。
 
 当将回调传递给优化的子组件时，这很有用，这些子组件依赖于链接相等性来防止不必要的渲染。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-20.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-20.png)
 
 ###  
 
@@ -356,7 +356,7 @@ React Context API 由三个主要部分组成：
 
 在典型的 React 应用程序中，数据是使用 props 从上到下（从父组件到子组件）传递的。但是，对于某些类型的道具（例如，所选语言、UI 主题）来说，这样的使用方法可能过于繁琐，这些道具必须传递给应用程序中的许多组件。上下文提供了一种在组件之间共享此类数据的方法，不必特意将 props 传递到下面的每个级别。当上下文值更改时，调用 useContext 的组件将始终重新呈现。如果重新渲染组件的成本很高，则可以使用记忆对其进行优化。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-21.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-21.png)
 
 ###  
 
@@ -366,7 +366,7 @@ React Context API 由三个主要部分组成：
 
 useRef返回一个可修改的 ref 对象，即一个属性。其电流由传递的参数初始化。返回的对象将在组件的整个生命周期内持续存在，并且不会因其他而更改。通常的用例是以命令式样式访问后代。即使用 ref，我们可以显式引用 DOM 元素。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-22.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-22.png)
 
 ###  
 
@@ -376,7 +376,7 @@ useRef返回一个可修改的 ref 对象，即一个属性。其电流由传递
 
 React.memo()是一个高阶组件。如果您的组件总是用不更改的道具渲染相同的东西，您可以将其包装在React.memo()调用中，以在某些情况下提高性能，从而记住结果。这意味着React将使用后一个渲染的结果，避免重新渲染。React.memo()只影响道具的更改。如果功能组件包装在React.memo中，并使用useState、useReducer或useContext，则当状态或上下文发生变化时，它将被重新渲染。  
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-23.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-23.png)
 
 ###  
 
@@ -387,7 +387,7 @@ React.memo()是一个高阶组件。如果您的组件总是用不更改的道�
 
 从一个组件返回多个元素是 React 中的常见做法。允许你形成子元素列表，而无需在 DOM 中创建不必要的节点。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-24.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-24.png)
 
 
 ### **31. 什么是 React Reconciliation？** 
@@ -402,7 +402,7 @@ React.memo()是一个高阶组件。如果您的组件总是用不更改的道�
 
 这些键帮助 React 确定哪些元素被更改、添加或删除。必须锁定它们，以便 React 可以随着时间的推移匹配数组元素。选择键的更好方法是使用一个字符串，该字符串将清楚地将列表项与其相邻项区分开来。大多数情况下，你将使用数据中的 ID 作为密钥。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-25.png)    
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-25.png)    
 
 ### **33. 如何在 Redux Thunk 中处理异步动作？**
 
@@ -410,7 +410,7 @@ React.memo()是一个高阶组件。如果您的组件总是用不更改的道�
 
 要使用 Redux Thunk，你需要将其作为中间件导入。动作创建者不仅应该返回一个对象，还应该返回一个将 dispatch 作为参数的函数。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-26.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-26.png)
 
 
 
@@ -420,7 +420,7 @@ React.memo()是一个高阶组件。如果您的组件总是用不更改的道�
 
 你需要使用useEffect钩子并将对象的字段作为依赖数组传递。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-27.png)  
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-27.png)  
 
 ### **35. 如何访问DOM元素？**
 
@@ -428,7 +428,7 @@ React.memo()是一个高阶组件。如果您的组件总是用不更改的道�
 
 引用使用React.createRef()或useRef()钩子创建，并通过ref属性附加到React元素。通过访问创建的引用，我们可以使用ref.current访问DOM元素。  
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-28.png) 
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-28.png) 
 
 ###  
 
@@ -444,11 +444,11 @@ React.memo()是一个高阶组件。如果您的组件总是用不更改的道�
 
 在索引文件的上下文中，公共 API 通常是指向外部模块或组件公开和访问的接口或函数。下面是表示公共 API 的索引文件的代码示例：
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-29.png) 
+![medium-zoom](/assets/roteLearning/react/640-1713417250622-29.png) 
 
 在此示例中，index.js 文件充当公共 API，其中导出函数greet()和calculateSum()，并且可以通过导入它们从其他模块访问它们。其他模块可以在其实现过程中导入和使用这些函数：``
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250623-30.png) 
+![medium-zoom](/assets/roteLearning/react/640-1713417250623-30.png) 
 
 通过从索引文件中导出特定函数，我们正在定义模块的公共 API，允许其他模块使用这些函数。
 
@@ -510,15 +510,15 @@ SSR 通常用于框架和库，如 Next.js for React 和 Nuxt.js for Vue.js 以�
 
 getStaticProps：此方法用于在构建时获取数据，并将页面预呈现为静态 HTML。它确保数据在生成时可用，并且在后续请求中不会更改。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250623-31.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250623-31.png)
 
 getServerSideProps：此方法用于获取每个请求的数据，并在服务器上预呈现页面。当你需要获取可能经常更改或特定于用户的数据时，可以使用它。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250623-32.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250623-32.png)
 
 getStaticPaths：此方法在动态路由中用于指定应在构建时预呈现的路径列表。它通常用于获取带有参数的动态路由的数据。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250623-33.png) 
+![medium-zoom](/assets/roteLearning/react/640-1713417250623-33.png) 
 
 ### **42. 什么是 linter？**
 
@@ -543,7 +543,6 @@ Linters 通过扫描源代码并将其与一组预定义的规则或指南进行
 ### **43. 你知道 React 的哪些架构解决方案？** 
 
 
-
 有几种架构解决方案和模式可用于构建 React 项目。一些流行的包括：  
 
 1.MVC（模型-视图-控制器）：MVC 是一种传统的架构模式，它将应用程序分为三个主要组件 - 模型、视图和控制器。React 可以在视图层中使用来渲染 UI，而其他库或框架可用于模型层和控制器层。
@@ -566,4 +565,4 @@ Linters 通过扫描源代码并将其与一组预定义的规则或指南进行
 
 特征切片设计促进了关注点的明确分离，并将功能封装在各个功能中。这允许不同的团队或开发人员独立处理不同的功能，而不必担心冲突或依赖关系。
 
-![![medium-zoom]](/assets/roteLearning/react/640-1713417250623-34.png)
+![medium-zoom](/assets/roteLearning/react/640-1713417250623-34.png)
