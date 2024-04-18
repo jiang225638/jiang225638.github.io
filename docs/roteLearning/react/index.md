@@ -1,15 +1,13 @@
 # React 
 
-![medium-zoom](/assets/roteLearning/react/assets/300.png)
+<!-- ![medium-zoom](/assets/roteLearning/react/assets/300.png) -->
 
 > *原文链接：https://dev.to/m_midas/44-react-frontend-interview-questions-2o63 如有翻译不准，请多指正。*
 
 在面试 React 前端开发人员职位时，在技术问题上做好充分准备是至关重要。React 已成为用于构建用户界面的超流行的 JavaScript 库之一，甲方们通常专注于评估候选人对 React 重要概念、超佳实践和相关技术的理解。在本文中，我们将探讨 React 前端开发人员访谈中常见问题的完整列表。通过熟悉这些问题及其答案，你可以提高成功的机会并展示你对 React 开发的熟练程度。因此，让我们深入探讨在 React 前端开发人员访谈中应该准备好解决的关键主题。
 
 
-
 ### **1. 你知道哪些 React Hook？** 
-
 
 
 ·useState：用于管理功能组件中的状态。
