@@ -1,6 +1,6 @@
 # React 
 
-![img](E:/%E6%A1%8C%E9%9D%A2/myBlog/assets/300.png)
+![medium-zoom](/assets/roteLearning/react/assets/300.png)
 
 > *原文链接：https://dev.to/m_midas/44-react-frontend-interview-questions-2o63 如有翻译不准，请多指正。*
 
