@@ -1,4 +1,4 @@
-- # Vue ~
+  # Vue ~
 
 
   ![img](/assets/roteLearning/vue/300.png)

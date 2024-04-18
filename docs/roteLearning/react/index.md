@@ -1,6 +1,6 @@
 # React 
 
-<!-- ![medium-zoom](/assets/roteLearning/react/assets/300.png) -->
+![img](/assets/roteLearning/react/300.png)
 
 > *原文链接：https://dev.to/m_midas/44-react-frontend-interview-questions-2o63 如有翻译不准，请多指正。*
 
