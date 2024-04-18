@@ -36,6 +36,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: 'vue',
           link: '/roteLearning/vue/',
         },
+        {
+          text: 'react',
+          link: '/roteLearning/react/',
+        },
       ],
     },
   ],

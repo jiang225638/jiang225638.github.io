@@ -1,9 +1,7 @@
-- # 面经，考Vue考的比较多~
+- # Vue ~
 
 
   ![img](/assets/roteLearning/vue/300.png)
-
-  ## 面经
 
   ### 1、怎么理解Vue单向数据流？
 
