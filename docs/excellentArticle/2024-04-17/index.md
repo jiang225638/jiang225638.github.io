@@ -9,17 +9,15 @@
 - 一些常见的流媒体传输协议：**「RTSP、RTMP、HLS、HTTP-FLV」**
 
 当时我查阅文档的时候也很蒙b，这些都是什么啊，这么多协议，而且都用来干啥的。反正就是一脸懵逼，
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640.png)
 经过好多番的学习。我这边提供的摄像头是支持**「RTSP」**取流的，所以打算在服务器上通过**「ffmpeg」**进行取流，然后推流到**「Nginx」**上，**「Nginx」**将流处理成对前端友好的传输格式**「HLS」**(**「m3u8」**格式的文件)，然后前端再拉流就行了。这里实现的流程是这样的
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-218.jpeg)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-218.jpeg)
 
 什么你说什么拉流推流，根本听不懂诶！
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-219.jpeg)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-219.jpeg)
 说实话，我也不懂，我三天的摸索下来，似乎还不能正确的理解推流和拉流。最后我是这么理解的：
 **「推流」**：女主播把画面推到服务器上
 **「拉流」**：我点开女主播的直播间，看女主播跳舞（doge)
-
-
 
 
 ### RTSP协议
@@ -31,9 +29,9 @@ RTSP协议，RTSP（实时流传输协议）是一个网络控制协议，用于
 
 学习了这些知识，我对视频流的传输渐渐有了一些理解，上文提到我们监控摄像机提供了RTSP流的地址常见摄像机厂商RTSP地址格式，我们可以通过一些工具去播放这个流，比如VLC、potPlayer播放器。这里建议使用VLC，因为它真的很轻量！potPlayers也行，两个都是究极好用的媒体播放器
 VLC：打开软件**-->**「媒体」**-->**打开网络串流
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-220.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-220.png)
 potPlayer：浏览器-->打开链接
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-221.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-221.png)
 这里把他们当作调试工具用就行啦，因为不管是RTSP流、RTMP流、FLV流、HLS流都能播放。在搭建服务之前得保证自己的摄像机正常的在工作。
 
 
@@ -49,7 +47,7 @@ potPlayer：浏览器-->打开链接
 ### Nginx
 
 这位才是重量级，真正让服务跑起来的还得是nginx，因为不熟，本来不打算走这条路(原本想用Node来搭)，到头来还是避不开Nginx(踩坑过后，嗯Nginx真香)
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-222.jpeg)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-222.jpeg)
 很重要的一点！一定要给nginx添加rtmp模块，在这里踩了很多坑，什么模块安装不上、配置文件不生效....em反正就踩了很多坑。
 
 ## 二、实战
@@ -63,7 +61,7 @@ potPlayer：浏览器-->打开链接
 ### 画面测试
 
 有了上文的地址，可以先在vlc和potPlayer里看一看，画面是否能正常预览画面，这里放一个正常取流的结果
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-223.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-223.png)
 
 ### 安装ffpemg
 
@@ -72,23 +70,23 @@ potPlayer：浏览器-->打开链接
 - **「宝塔面板」**
 
 我是用宝塔面板安装的，因为方便嘛！
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-224.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-224.png)
 
 - **「手动安装」**
 
 来到ffmpeg中文官网，选择静态构建
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-225.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-225.png)
 点击sorce
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-226.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-226.png)
 下载第一个就行
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-227.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-227.png)
 下载完了之后把他扔到服务器上面去
 这里先不着急，ffmpeg安装还依赖一些东西，nasm
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-228.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-228.png)
 同样也是下载完了扔到服务器上就行
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-229.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-229.png)
 万事俱备，解压编译安装
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-230.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-230.png)
 先是解压nasm
 
 ```
@@ -97,7 +95,7 @@ tar -xvf /www/server/mypack/nasm-2.16.01.tar.gz #解压到当前目录
 ```
 
 这里我解压到了/www/server/nasm目录下
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-231.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-231.png)
 **「进入该目录后」**配置makeFile然后进行编译安装
 
 ```
@@ -114,10 +112,10 @@ ln -s [软件安装目录下的bin目录或者sbin] [自己机器的sbin]
 ```
 
 以nasm为例，我的nasm是安装在/usr/local/nasm下面
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-232.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-232.png)
 因为我这里已经配置过了，所以whereis显示/usr/local/sbin/nasm
 来看看/usr/local/nasm目录下有什么，一个bin目录（用于存放该软件的指令，有些软件是sbin）
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-233.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-233.png)
 命令如下：
 
 ```
@@ -125,17 +123,17 @@ ln -s /usr/local/nasm/sbin /usr/local/sbin/nasm
 ```
 
 这里我已经建立过了，所以会显示文件已经存在
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-234.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-234.png)
 照葫芦画瓢，ffmpeg也是如此安装
 
 
 安装完了并建立了软链接，使用`ffmpeg -version`检查是否安装上了。
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-235.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-235.png)
 
 ### 安装Nginx
 
 到这里开始踩坑了，nginx-rtmp-module模块的安装，因为我的机器原本就安装了nginx，按道理说这并不麻烦，不就是添加一个功能模块嘛，尝试过各种办法老是装不上。这里有两种情况，这两种情况都是要下载rtmp和nginx-http-flv模块的，先下载它吧，有可能会出现一些**「网络」**问题，这里自己解决啦
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-236.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-236.png)
 
 ```
 git clone https://github.com/arut/nginx-rtmp-module.git 模块存放路径/默认当前
@@ -159,7 +157,7 @@ yum install -y openssl openssl-devel #可以在你的应用程序中使用 OpenS
 1. 下载nginx
 
 下载nginx有很多方式，你可以在windows上下载，然后再扔到Linux上，也可以用包管理工具安装，这里选择前者。
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-237.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-237.png)
 找个工具扔上去就行
 
 ```
@@ -168,7 +166,7 @@ tar -xvf nginx-1.14.0.tar.gz -C /usr/local
 ```
 
 `ls /usr/local/`查看解压出来的nginx
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-238.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-238.png)
 发现已经解压好了，然后进入该目录
 `cd /usr/local/nginx-1.24.0`
 配置./configure 脚本
@@ -197,7 +195,7 @@ tar -xvf nginx-1.14.0.tar.gz -C /usr/local
 **「后期实践证明，压根不需要rtmp模块，要http-flv模块就行了，昨晚复盘的时候发现不装nginx-rtmp-module也能跑通」**
 mmp，特别像这根水管一样，去网上找各种文章，然后东拼西凑，居然能跑起来，你就说能不能用吧
 
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-239.gif)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-239.gif)
 
 
 编译安装nginx
@@ -207,7 +205,7 @@ make && make install #如果你想看编译是否通过，建议是make和make i
 ```
 
 安装完并且软连接建立，`nginx -t`检查
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-240.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-240.png)
 nginx默认对应的是80端口，在启动nginx之前检查一下自己的防火墙，看看80端口有没有放行
 
 ```
@@ -231,12 +229,12 @@ nginx
 ```
 
 打开浏览器，输入你的服务器ip就能看到这个默认界面了，要是出现其他的错误，仔细看终端的错误信息。
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-241.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-241.png)
 
 ### nginx配置
 
 编辑nginx的配置文件nginx.conf
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-242.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-242.png)
 内容如下
 
 ```
@@ -348,16 +346,16 @@ ffmpeg -re -rtsp_transport tcp -i rtsp://admin:123456@ip:port/h264/ch1/main/av_s
 ```
 
 跑起来是这样的
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-243.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-243.png)
 不用担心ts片段会堆满你的磁盘，因为之前已经在nginx的nginx.conf文件配置过了，多余的ts片段会直接丢掉。
 
 ### 测试
 
 要是没什么问题那么现在用VLC访问http://ip:8888/hls/test.m3u8是可以看到监控画面的，
 要是有问题 那多半是对应的端口没放行
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-244.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-244.png)
 成功！
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-245.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-245.png)
 有了这个hls流的地址，就可以很方便的将监控画面放进移动端页面，网页端页面了，这里我就不过多的介绍了，
 
 ### vue3中使用
@@ -417,20 +415,20 @@ ffmpeg -re -rtsp_transport tcp -i rtsp://admin:123456@ip:port/h264/ch1/main/av_s
 ```
 
 结果：
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-246.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-246.png)
 
 ## 三、总结
 
 几天的试验与探索，收获很多，我也想过为什么不能让rtsp流直接在web网页中显示，那得具体的问问研究流媒体传输协议的大佬了，究其原因还是浏览器不支持直接播放rtsp流。所以没办法还是要转码，转码就会花时间，延迟自然就出现了。而且这个demo转码是直接在本机进行的，并不需要再推流到服务器上了，实际情况可能转码和流媒体服务器是分开的，延迟会更高，假设又抛一个回放的需求....要回放XXXX年XX月XX日，某某时间段的录像，好了我的服务器已经宕机了。有错误的地方请指正
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-247.jpeg)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-247.jpeg)
 
 ### 性能问题（实际环境中）
 
 我的机器比较垃圾，一个ffmpeg进程已经负载累累了，还有一个问题是画面延迟，hls方案延迟会比较高，我没做过其他的解决方案。这个demo的延迟大概10S这样
 平均负载
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-248.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-248.png)
 IO
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-249.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-249.png)
 暂时没有想到优化的解决方案。如果有好的优化方案可以聊一聊，我也想学！
 
 ### ffmpeg后台24小时运行
@@ -449,7 +447,7 @@ ffmpeg -nostdin -re -rtsp_transport tcp -i rtsp://admin:123456@ip:554/h264/ch1/m
 ```
 
 检查脚本`check.sh`这里我没有在脚本中写定时器，而是通过宝塔面板计划任务去实现的，方便嘛
-![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-250.png)
+![medium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856085-250.png)
 
 ```
 #!/bin/bash  

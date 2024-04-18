@@ -76,6 +76,7 @@ map()若要渲染元素数组，你可以使用该方法循环访问数组并返
 
 ![![medium-zoom]](/assets/roteLearning/react/640-1713417250621-1.png)
 
+
 另一方面，不受控制的组件使用 refs 或其他方法在内部管理自己的状态。它们独立存储和更新其状态，而不依赖于 props 或回调。父组件对不受控制的组件的状态的控制较少。  
 
 ![![medium-zoom]](/assets/roteLearning/react/640-1713417250621-2.png)     
@@ -387,6 +388,7 @@ React.memo()是一个高阶组件。如果您的组件总是用不更改的道�
 从一个组件返回多个元素是 React 中的常见做法。允许你形成子元素列表，而无需在 DOM 中创建不必要的节点。
 
 ![![medium-zoom]](/assets/roteLearning/react/640-1713417250622-24.png)
+
 
 ### **31. 什么是 React Reconciliation？** 
 
