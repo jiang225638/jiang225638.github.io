@@ -36,7 +36,6 @@ potPlayer：浏览器-->打开链接
 ![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-221.png)
 这里把他们当作调试工具用就行啦，因为不管是RTSP流、RTMP流、FLV流、HLS流都能播放。在搭建服务之前得保证自己的摄像机正常的在工作。
 
-------
 
 然后就是重头戏了，**「nginx」**和**「ffmpeg」**。叠个甲，对ffmpeg我是第一次用，nginx也仅限于了解，平时部署项目是宝塔面板一键部署的。
 
@@ -44,8 +43,6 @@ potPlayer：浏览器-->打开链接
 
 这个就不多说了(因为我说不来哈哈哈)，是一个开源的程序库，通过命令行的方式来使用他的功能，就专门用来处理媒体文件的，这里挂一个官网的下载地址。如果使用的是宝塔面板，软件商店就有，一键安装就行。什么？命令行的方式？当然，我想，你在找文档，而且最好是中文文档。这里也准备好了ffmpeg中文文档。
 把他当作一个中间工具就行了。
-
-------
 
 
 
@@ -131,7 +128,6 @@ ln -s /usr/local/nasm/sbin /usr/local/sbin/nasm
 ![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-234.png)
 照葫芦画瓢，ffmpeg也是如此安装
 
-------
 
 安装完了并建立了软链接，使用`ffmpeg -version`检查是否安装上了。
 ![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-235.png)
@@ -197,14 +193,12 @@ tar -xvf nginx-1.14.0.tar.gz -C /usr/local
 --add-module=/www/server/nginx-http-flv-module # 指定添加flv模块
 ```
 
-------
 
 **「后期实践证明，压根不需要rtmp模块，要http-flv模块就行了，昨晚复盘的时候发现不装nginx-rtmp-module也能跑通」**
 mmp，特别像这根水管一样，去网上找各种文章，然后东拼西凑，居然能跑起来，你就说能不能用吧
 
 ![meduium-zoom](/assets/excellentArticle/2024-04-17/640-1713345856084-239.gif)
 
-------
 
 编译安装nginx
 
