@@ -6,10 +6,10 @@ export const nav: DefaultTheme.Config['nav'] = [
     items: [
       { text: 'js', link: '/js/' },
       { text: 'css', link: '/css/' },
-      { text: 'html', link: '/html/' },
+      { text: 'html', link: '/html' },
       { text: 'vue', link: '/vue/' },
       { text: 'react', link: '/react/' },
-      { text: 'nestjs', link: '/nestjs/' },
+      { text: 'nestjs', link: '/nestjs/base/' },
     ],
   },
   {

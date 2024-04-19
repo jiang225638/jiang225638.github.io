@@ -47,4 +47,34 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       ],
     },
   ],
+  '/js/': [
+    {
+      text: '积累',
+      items: [
+        {
+          text: '提高开发效率的10个JavaScript技巧',
+          link: '/js/2024-04-19/',
+        },
+      ],
+    },
+  ],
+  '/nestjs/': [
+    {
+      text: '原文请上后盾人官网查看',
+      items: [
+        {
+          text: '基础知识',
+          link: '/nestjs/base/',
+        },
+        {
+          text: '提供者',
+          link: '/nestjs/providers/',
+        },
+        {
+          text: '模块',
+          link: '/nestjs/module/',
+        },
+      ],
+    },
+  ],
 }
