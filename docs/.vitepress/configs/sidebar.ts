@@ -60,7 +60,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   ],
   '/nestjs/': [
     {
-      text: '原文请上后盾人官网查看',
+      text: '原文请上后盾人官网查看www.houdunren.com',
       items: [
         {
           text: '基础知识',
@@ -73,6 +73,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         {
           text: '模块',
           link: '/nestjs/module/',
+        },
+        {
+          text: '项目配置',
+          link: '/nestjs/proConfig/',
         },
       ],
     },
