@@ -2,8 +2,6 @@
 
 ## 安装依赖
 
-> 向军大叔每晚八点在 [抖音](https://live.douyin.com/houdunren) 和 [bilibli](https://space.bilibili.com/282190994) 直播
-
 [网站配置](https://docs.nestjs.com/techniques/configuration#configuration)管理使用 @nestjs/config 扩展包，首先安装扩展包。
 
 

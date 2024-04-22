@@ -78,6 +78,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '项目配置',
           link: '/nestjs/proConfig/',
         },
+        {
+          text: 'prisma',
+          link: '/nestjs/prisma/',
+        },
       ],
     },
   ],

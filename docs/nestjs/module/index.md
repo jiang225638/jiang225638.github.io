@@ -2,10 +2,6 @@
 
 ## 基础知识
 
-> 向军大叔每晚八点在 [抖音](https://live.douyin.com/houdunren) 和 [bilibli](https://space.bilibili.com/282190994) 直播
-
-
-
 模块是一个独立的应用单位，比如你可以将用户登录注册、配置项管理、商品定单管理分别定义为不同的模块
 
 - 使用imports导入其他模块
