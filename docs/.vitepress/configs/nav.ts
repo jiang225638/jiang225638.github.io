@@ -5,6 +5,7 @@ export const nav: DefaultTheme.Config['nav'] = [
     text: '看穿尘世',
     items: [
       { text: 'js', link: '/js/' },
+      { text: 'TS', link: '/ts/' },
       { text: 'css', link: '/css/' },
       { text: 'html', link: '/html' },
       { text: 'vue', link: '/vue/' },
