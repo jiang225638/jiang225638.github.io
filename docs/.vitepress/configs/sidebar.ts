@@ -37,6 +37,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '2024-04-24',
           link: '/excellentArticle/2024-04-24/',
         },
+        {
+          text: '2024-05-06',
+          link: '/excellentArticle/2024-05-06/',
+        },
       ],
     },
   ],
@@ -51,6 +55,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         {
           text: 'react',
           link: '/roteLearning/react/',
+        },
+        {
+          text: 'javaScript',
+          link: '/roteLearning/javaScript/',
         },
       ],
     },
