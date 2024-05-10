@@ -49,15 +49,15 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       text: '需要死记硬背的八股',
       items: [
         {
-          text: 'vue',
+          text: '一丢丢vue面试题',
           link: '/roteLearning/vue/',
         },
         {
-          text: 'react',
+          text: '复习复习44个react知识点',
           link: '/roteLearning/react/',
         },
         {
-          text: 'javaScript',
+          text: '进阶进阶！复习50个JavaScript「进阶」知识点',
           link: '/roteLearning/javaScript/',
         },
       ],
