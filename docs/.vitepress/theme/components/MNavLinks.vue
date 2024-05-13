@@ -48,6 +48,7 @@ const formatTitle = computed(() => {
   @media (min-width: $media) {
     .m-nav-links {
       grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+      margin-bottom: 0;
     }
   }
 }

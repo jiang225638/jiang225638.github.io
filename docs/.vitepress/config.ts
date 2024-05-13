@@ -39,10 +39,10 @@ export default defineConfig({
 
     // socialLinks: [{ icon: 'github', link: '' }],
 
-    footer: {
-      message: '别看了',
-      copyright: '没了',
-    },
+    // footer: {
+    //   message: '别看了',
+    //   copyright: '没了',
+    // },
 
     darkModeSwitchLabel: '外观',
     returnToTopLabel: '返回顶部',

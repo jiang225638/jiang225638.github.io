@@ -20,6 +20,9 @@ hero:
     - text: 未来出路
       link: /theWayForward/`
       theme: alt
+
+
+
 # features:
 #   - icon: 📖
 #     title: 常用知识点
@@ -50,7 +53,14 @@ hero:
 #     title: 只要你有一件合理的事去做，你的生活就会显得特别美好 。
 #     details: '<small class="bottom-small">一个想躺平的小开发</small>'
 #     link: /
----
+--- 
+
+<script setup>
+ import homePage from './components/homePage.vue'
+</script>  
+
+
+<homePage />
 
 <style>
 /*爱的魔力转圈圈*/
@@ -63,9 +73,9 @@ hero:
   opacity: 0.8;
 }
 
-.m-home-layout .bottom-small {
+/* .m-home-layout .bottom-small {
   display: block;
   margin-top: 2em;
   text-align: right;
-}
+} */
 </style>

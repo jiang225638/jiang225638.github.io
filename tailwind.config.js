@@ -4,4 +4,8 @@ import tailwindConfig from '@femm/tailwind-config'
 export default {
   presets: [tailwindConfig],
   content: ['./docs/**/*.{js,ts,md,vue}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 }
