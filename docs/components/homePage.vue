@@ -10,6 +10,8 @@ const homePage = ref('homePage')
       class="w-full"
       src="https://v0.stream.tencentmusic.com/0b53jiaaaaaaoaadz3gkfrrkcswdabfaaaaa.f140000.mp4?dis_k=ee25d5dd31d10da3fbfc610236b77a60&dis_t=1715593195&local=1&fromtag=1231013"
       controls
+      muted
+      autoplay
     ></video>
   </div>
 </template>
