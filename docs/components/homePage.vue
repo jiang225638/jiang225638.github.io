@@ -20,7 +20,6 @@ const homePage = ref('homePage')
 .homePage {
   width: 100%;
   height: 44vh;
-  background-color: rgba(99, 124, 217, 0.2);
   display: flex;
   justify-content: space-around;
   align-items: center;
