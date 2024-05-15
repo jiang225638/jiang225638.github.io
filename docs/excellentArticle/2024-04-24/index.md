@@ -56,7 +56,8 @@ export interface StoreCreator {
 }
 ```
 
-其实究其原因，无非就是我们没有真正去了解何为 TypeScript。我们常说 TypeScript 是 js 的超集，确实如此，我们通过 TS 可以使用到很多 js 还在提案中的功能（当然，如今有了 Babel。。。）![medium-zoom](/assets/excellentArticle/2024-04-24/640-1713929828532-1.webp)
+其实究其原因，无非就是我们没有真正去了解何为 TypeScript。我们常说 TypeScript 是 js 的超集，确实如此，我们通过 TS 可以使用到很多 js 还在提案中的功能（当然，如今有了 Babel。。。）
+![medium-zoom](/assets/excellentArticle/2024-04-24/640-1713929828532-1.webp)
 
 所以 TypeScript 并不是什么神奇的东西，它只是在 js 基础上加了一些注释，让我们更容易理解代码的含义。所以！致使我们看不懂上面的代码。。。
 

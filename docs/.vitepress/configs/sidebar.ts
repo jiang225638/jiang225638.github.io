@@ -6,40 +6,48 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       text: '每日阅读',
       items: [
         {
-          text: '2024-04-11',
+          text: '前端常见的安全攻击方式、原理、以及如何防护！',
           link: '/excellentArticle/2024-04-11/',
         },
         {
-          text: '2024-04-12',
+          text: '为什么需要缓存',
           link: '/excellentArticle/2024-04-12/',
         },
         {
-          text: '2024-04-15',
+          text: '面试官：Vue3中什么是Reactive的懒响应性？',
           link: '/excellentArticle/2024-04-15/',
         },
         {
-          text: '2024-04-16',
+          text: '搞懂 Vue3 中的各种 ref: toRef,toRefs,isRef,unref...',
           link: '/excellentArticle/2024-04-16/',
         },
         {
-          text: '2024-04-17',
+          text: '基于nginx+ffmpeg+vue3+TypeScript在网页上显示监控的实时画面',
           link: '/excellentArticle/2024-04-17/',
         },
         {
-          text: '2024-04-18',
+          text: '面试官：只知道v-model是modelValue语法糖，那你可以走了',
           link: '/excellentArticle/2024-04-18/',
         },
         {
-          text: '2024-04-23',
+          text: 'TypeScript很麻烦💔，不想使用！',
           link: '/excellentArticle/2024-04-23/',
         },
         {
-          text: '2024-04-24',
+          text: '一文掌握 TS 高级类型编程',
           link: '/excellentArticle/2024-04-24/',
         },
         {
-          text: '2024-05-06',
+          text: '前端视频人像实时捕获技术,超干货!!!',
           link: '/excellentArticle/2024-05-06/',
+        },
+        {
+          text: '5分钟带你了解【前端装饰器】，“高大上”的“基础知识”',
+          link: '/excellentArticle/2024-05-07/',
+        },
+        {
+          text: '开发阶段！跨域问题多种解决方案的精华总结',
+          link: '/excellentArticle/2024-05-15/',
         },
       ],
     },
