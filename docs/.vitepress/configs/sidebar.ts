@@ -49,6 +49,14 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '开发阶段！跨域问题多种解决方案的精华总结',
           link: '/excellentArticle/2024-05-15/',
         },
+        {
+          text: 'ES7、ES8、ES9、ES10、ES11、ES12都增加了哪些新特性？',
+          link: '/excellentArticle/2024-05-17/',
+        },
+        {
+          text: '前端需要知道的缓存知识总结',
+          link: '/excellentArticle/2024-05-23/',
+        },
       ],
     },
   ],
@@ -79,6 +87,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '提高开发效率的10个JavaScript技巧',
           link: '/js/2024-04-19/',
         },
+        {
+          text: '万字总结 JS 数据结构与常用的算法',
+          link: '/js/2024-05-23/',
+        },
       ],
     },
   ],
@@ -105,6 +117,17 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         {
           text: 'prisma',
           link: '/nestjs/prisma/',
+        },
+      ],
+    },
+  ],
+  '/theWayForward/': [
+    {
+      text: '原文请上后盾人官网查看www.houdunren.com',
+      items: [
+        {
+          text: '基础知识',
+          link: '/theWayForward/iHaveRoadbyThailand/',
         },
       ],
     },

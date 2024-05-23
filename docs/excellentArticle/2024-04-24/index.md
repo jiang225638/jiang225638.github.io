@@ -46,7 +46,7 @@ export interface StoreCreator {
     S,
     A extends Action,
     Ext extends {} = {},
-    StateExt extends {} = {},
+    StateExt extends {} = {},312321
     PreloadedState = S
   >(
     reducer: Reducer<S, A, PreloadedState>,
