@@ -57,6 +57,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '前端需要知道的缓存知识总结',
           link: '/excellentArticle/2024-05-23/',
         },
+        {
+          text: '领导被我的花式console.log吸引了！直接写入公司公共库！',
+          link: '/excellentArticle/2024-05-30/',
+        },
       ],
     },
   ],
