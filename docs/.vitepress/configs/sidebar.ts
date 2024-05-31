@@ -61,6 +61,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '领导被我的花式console.log吸引了！直接写入公司公共库！',
           link: '/excellentArticle/2024-05-30/',
         },
+        {
+          text: '赶快收藏！全网最佳websocket封装：完美支持断网重连、自动心跳！',
+          link: '/excellentArticle/2024-05-31/',
+        },
       ],
     },
   ],
