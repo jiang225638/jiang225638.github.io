@@ -65,6 +65,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '赶快收藏！全网最佳websocket封装：完美支持断网重连、自动心跳！',
           link: '/excellentArticle/2024-05-31/',
         },
+        {
+          text: 'CSS 动画从入门到高手!',
+          link: '/excellentArticle/2024-06-07/',
+        },
       ],
     },
   ],
