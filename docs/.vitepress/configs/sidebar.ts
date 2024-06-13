@@ -69,6 +69,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: 'CSS 动画从入门到高手!',
           link: '/excellentArticle/2024-06-07/',
         },
+        {
+          text: '1000个判断条件难道要写了1000个 if ? 一文教你如何实现分支优化',
+          link: '/excellentArticle/2024-06-13/',
+        },
       ],
     },
   ],
