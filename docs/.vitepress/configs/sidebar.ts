@@ -77,6 +77,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '在 web 地图上的踩坑指南',
           link: '/excellentArticle/2024-06-14/',
         },
+        {
+          text: '一个reduce还能玩出这么多花样儿？中高级前端都知道的reduce函数高级用法',
+          link: '/excellentArticle/2024-06-21/',
+        },
       ],
     },
   ],
