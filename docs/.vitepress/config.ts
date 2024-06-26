@@ -11,8 +11,8 @@ export default defineConfig({
   base: APP_BASE_PATH ? `/${APP_BASE_PATH}/` : '/',
 
   lang: 'zh-CN',
-  title: '想躺不敢躺',
-  description: '啥都不会，只想躺平，看看小说，听听音乐，晒晒太阳',
+  title: '馒头面包都想要',
+  description: '啥都不会，只想躺平，听听音乐，晒晒太阳',
   head,
 
   lastUpdated: true,

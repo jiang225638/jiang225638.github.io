@@ -5,10 +5,10 @@ layoutClass: 'm-home-layout'
 hero:
   name: 正在装修中。。。
   text: 
-  tagline:  如果你遇到了有点不可思议又让你困扰的事，不妨去探一探究竟。
+  tagline:  Happiness is a journey,not a destination.
   image:
     src: /logo1.gif
-    alt: 生命不息，牛马不止
+    alt: 所谓活得真实，就是真诚地回应当下的需求
   actions:
     - text: 常用网址 →
       link: /nav/
@@ -20,6 +20,7 @@ hero:
     - text: 未来出路
       link: /theWayForward/`
       theme: alt
+  
 
 
 

@@ -11,6 +11,7 @@ export const nav: DefaultTheme.Config['nav'] = [
       { text: 'vue', link: '/vue/' },
       { text: 'react', link: '/react/' },
       { text: 'nestjs', link: '/nestjs/base/' },
+      { text: 'JAVA', link: '/java/2024-06-26/' },
     ],
   },
   {

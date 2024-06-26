@@ -156,4 +156,15 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       ],
     },
   ],
+  '/java/': [
+    {
+      text: '',
+      items: [
+        {
+          text: '第一次接触',
+          link: '/java/2024-06-26/',
+        },
+      ],
+    },
+  ],
 }
