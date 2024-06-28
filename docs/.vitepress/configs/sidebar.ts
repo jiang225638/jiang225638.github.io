@@ -105,7 +105,6 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
   ],
   '/js/': [
     {
-      text: '积累',
       items: [
         {
           text: '提高开发效率的10个JavaScript技巧',
@@ -114,6 +113,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         {
           text: '万字总结 JS 数据结构与常用的算法',
           link: '/js/2024-05-23/',
+        },
+        {
+          text: 'ES7、ES8、ES9、ES10、ES11、ES12新特性大全！',
+          link: '/js/2024-06-28/',
         },
       ],
     },
