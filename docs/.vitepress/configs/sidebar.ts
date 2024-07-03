@@ -81,6 +81,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '一个reduce还能玩出这么多花样儿？中高级前端都知道的reduce函数高级用法',
           link: '/excellentArticle/2024-06-21/',
         },
+        {
+          text: '不要再写满屏import导入啦！',
+          link: '/excellentArticle/2024-07-03/',
+        },
       ],
     },
   ],
