@@ -85,6 +85,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: '不要再写满屏import导入啦！',
           link: '/excellentArticle/2024-07-03/',
         },
+        {
+          text: 'Vue3 组件封装的一些技巧和心得!',
+          link: '/excellentArticle/2024-08-09/',
+        },
       ],
     },
   ],
