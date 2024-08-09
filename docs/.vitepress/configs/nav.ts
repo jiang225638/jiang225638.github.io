@@ -16,7 +16,7 @@ export const nav: DefaultTheme.Config['nav'] = [
   },
   {
     text: '阅尽繁华',
-    items: [{ text: '读过的精彩', link: '/excellentArticle/' }],
+    items: [{ text: '风景的精彩', link: '/excellentArticle/' }],
   },
   // { text: '导航3', link: '' },
   // {

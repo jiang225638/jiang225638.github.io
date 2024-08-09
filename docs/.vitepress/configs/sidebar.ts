@@ -3,7 +3,7 @@ import type { DefaultTheme } from 'vitepress'
 export const sidebar: DefaultTheme.Config['sidebar'] = {
   '/excellentArticle/': [
     {
-      text: '每日阅读',
+      text: '每日积累',
       items: [
         {
           text: '前端常见的安全攻击方式、原理、以及如何防护！',
