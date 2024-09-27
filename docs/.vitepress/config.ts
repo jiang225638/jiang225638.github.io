@@ -12,7 +12,7 @@ export default defineConfig({
 
   lang: 'zh-CN',
   title: '馒头面包都想要',
-  description: '啥都不会，只想躺平，听听音乐，晒晒太阳',
+  description: '咿呀咿呦儿喂',
   head,
 
   lastUpdated: true,
@@ -43,7 +43,6 @@ export default defineConfig({
     //   message: '别看了',
     //   copyright: '没了',
     // },
-
     darkModeSwitchLabel: '外观',
     returnToTopLabel: '返回顶部',
     lastUpdatedText: '上次更新',

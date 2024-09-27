@@ -59,6 +59,7 @@ table {
 .link.active span,
 .VPNavBarMenuLink:hover span,
 .VPSidebarItem.is-active .link,
+
 .VPSidebar .link:hover {
   color: var(--vp-c-brand-1);
 }

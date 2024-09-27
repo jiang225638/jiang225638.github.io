@@ -89,6 +89,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           text: 'Vue3 组件封装的一些技巧和心得!',
           link: '/excellentArticle/2024-08-09/',
         },
+        {
+          text: '10 分钟，速通 JS 性能优化!',
+          link: '/excellentArticle/2024-08-23/',
+        },
       ],
     },
   ],
