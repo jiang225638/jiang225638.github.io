@@ -7,9 +7,6 @@ import { createMediumZoomProvider } from './composables/useMediumZoom'
 import MLayout from './components/MLayout.vue'
 import MNavLinks from './components/MNavLinks.vue'
 
-import Particles from '@tsparticles/vue3'
-import { loadSlim } from '@tsparticles/slim'
-
 import './styles/index.scss'
 
 let homePageStyle: HTMLStyleElement | undefined
@@ -44,11 +41,6 @@ export default {
         { immediate: true },
       )
     }
-    app.use(Particles, {
-      init: async (engine) => {
-        await loadSlim(engine)
-      },
-    })
   },
 }
 
