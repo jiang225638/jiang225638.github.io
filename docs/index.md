@@ -1,76 +1,29 @@
 ---
 layout: home
-layoutClass: 'm-home-layout'
+# 首页部分元素定制
+ # 设置首页的 banner 信息
+blog:
+ name: '爱吃西红柿炒鸡蛋'
+ motto: 的博客
+ inspiring:
+  - 千万不要因为走得太久，而忘记了我们为什么出发
+  - 人生就像一场修行，你不可能一开始就修成正果
+  - 无论多么沉重的负担，也不要忘记微笑；无论多么漫长的路程，也不要忘记坚持
+  - 生活的真谛不在繁华，而在于淡泊
+ # 设置作者信息
+ author: 爱吃西红柿炒鸡蛋
+ logo: /logo.png
 
-hero:
-  name: 正在装修中。。。
-  text:
-  tagline: Happiness is a journey,not a destination.
-  image:
-    src: /logo1.gif
-    alt: 所谓活得真实，就是真诚地回应当下的需求
-  actions:
-    - text: 常用网址 →
-      link: /nav/
-    - text: 每日记录
-      link: /dailyRecord/
-      theme: alt
-    - text: 死记硬背
-      link: /roteLearning/
-    - text: 未来出路
-      link: /roadAhead/`
-      theme: alt
-features:
-  - icon: 📖
-    title: 常用知识点
-    details: 整理前端常用知识点<small></small><br />
-    link:
-    linkText: 曾经记过的东西
-  - icon: 📘
-    title: 源码阅读
-    details: 了解各种库的实现原理<br />学习其中的小技巧和冷知识
-    link:
-    linkText: 看不懂的乱码
-  - icon: 💡
-    title: 工作经验
-    details: 在工作中学到的一切<small>（常用库/工具/奇淫技巧等）</small><br />配合 CV 大法来更好的摸鱼
-    link:
-    linkText: 常用工具库
-  - icon: 🧰
-    title: 提效工具
-    details: 工欲善其事，必先利其器<br />记录开发和日常使用中所用到的软件、插件、扩展等
-    link:
-    linkText: 用过的工具和配置
-  - icon: 🐞
-    title: 血泪的教训
-    details: 那些年我们踩过的坑<br />总有一些让你意想不到的问题
-    link:
-    linkText: 踩坑记录
-  - icon: 💯
-    title: 只要你有一件合理的事去做，你的生活就会显得特别美好 。
-    details: '<small class="bottom-small">一个想躺平的小开发</small>'
-    link: /
+ # 设置 inspiringTimeout 可以实现自动切换
+ inspiringTimeout: 3000
+ pageSize: 6
+
+ # 移动端隐藏头部头像展示minScreenAvatar
+ minScreenAvatar: true
+ 
+ # 设置头像分离展示模式
+ # avatarMode: split
+
+ # 移动端隐藏头部头像展示
+ # minScreenAvatar: false
 ---
-
-<!-- <homePage />
-<script setup >
- import homePage from './components/homeBg/homePage.vue'
-</script> -->
-
-<style>
-/*爱的魔力转圈圈*/
-.m-home-layout .image-src:hover {
-  transform: translate(-50%, -50%) rotate(666turn);
-  transition: transform 59s 1s cubic-bezier(0.3, 0, 0.8, 1);
-}
-
-.m-home-layout .details small {
-  opacity: 0.8;
-}
-
-/* .m-home-layout .bottom-small {
-  display: block;
-  margin-top: 2em;
-  text-align: right;
-} */
-</style>

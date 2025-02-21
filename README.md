@@ -1,31 +1,69 @@
-# vitepress-nav-template
+<h1 align="center"> VitePress @sugarat/theme </h1>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/maomao1996/picture/main/vitepress-nav-template/home.webp" alt="home" />
+简约风的 <a href="https://theme.sugarat.top"  target="_blank"target="_blank">VitePress 博客主题</a> 示例运行项目。
 </p>
-<p align="center"> 基于 <b>VitePress</b> 的个人前端导航页面模板 </p>
-<p align='center'><a href="/guide.md">基础教程</a> | <a href="https://notes.fe-mm.com/">作者博客</a></p>
 
----
+<p align="center">
+    <a href="https://atqq.github.io/vitepress-blog-sugar-template/" target="_blank">GitHub Pages Demo</a>
+</p>
 
-## 预览地址
+## Usage
 
-- <https://fe-nav.netlify.app/nav/>
-- <https://maomao1996.github.io/vitepress-nav-template/nav/>
+先安装 `pnpm`
 
-## 功能
+```sh
+npm i -g pnpm
+```
 
-- 新增 `layout-class` 方便更好的自定义样式
-- 默认中文
-- 自带前端导航模块
-- 支持日夜颜色模式自适应切换
-- 支持 Github Pages 直接部署上线
-  - 1. 开启 github actions
-  - 2. 配置 Pages 为 `gh-pages` 分支
-  - 3. 访问地址为 `https://<username>.github.io/<repository>/`
-- 支持 [tailwindcss](https://github.com/tailwindlabs/tailwindcss)
-- 支持查看 vue 示例组件源码（使用 [vite-plugin-markdown-preview](https://github.com/jaskang/vite-plugin-markdown-preview)）
+安装依赖
 
-## 说明
+```sh
+pnpm install
+```
 
-前端导航模块由 [茂茂 | maomao](https://github.com/maomao1996) 开发，如有引用、借鉴的请保留版权声明：<https://github.com/maomao1996/vitepress-nav-template>
+开发启动
+
+```sh
+pnpm dev
+```
+
+构建
+
+```sh
+pnpm build
+```
+
+预览产物
+
+```sh
+pnpm serve
+```
+
+## Github Pages 部署
+
+① Github Pages 开启 Git Actions 部署支持
+
+![](https://img.cdn.sugarat.top/mdImg/sugar/8a2454c628d0e2abcc7a0451ddd7d2dc)
+
+② 复制文件 `.github/workflows/deploy.yml` 到自己的项目相同目录下
+
+示例项目已包含，可以直接进行下一步
+
+③ 修改 `docs/.vitepress/config.mts` 里的构建配置
+
+**如果项目名已经为 name.github.io 域名，则不需要修改，保持默认值 `/` 即可**
+
+`base` 改为 `"/仓库名/"` 即可
+
+```ts
+// 省略无关代码
+const base = '/vitepress-blog-sugar-template/'
+export default defineConfig({
+  base,
+})
+```
+
+④ 推送 `main` 分支即可
+
+需要进一步修改部署和构建配置，详见`deploy.yml` 文件。
