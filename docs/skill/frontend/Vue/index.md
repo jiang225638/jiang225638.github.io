@@ -1,31 +1,22 @@
-<!-- ---
-layoutClass: m-nav-layout
-outline: [2, 3, 4]
 ---
-
-<script setup>
-import { NAV_DATA } from './data'
-</script>
-<style src="./index.scss"></style>
-
-# 前端导航
-
-js 测试页
-
-<MNavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>
-
-<br /> -->
-# Vue
-
-## 12321
-
-<!-- ![medium-zoom](/assets/js/logo.png) -->
-
-## 123123123
-
-```vue preview
-<template>
-  <div class="flex-row-center rounded-lg w-full h-40 bg-blue-500">vue 组件预览测试</div>
-</template>
-```
-
+sticky: 999
+title: 🔧 主题样式定制
+readingTime: false
+tag:
+ - 配置
+recommend: 3
+description: 1分钟内完成自己的博客创建
+descriptionHTML: '
+<span style="color:var(--description-font-color);">1分钟内完成自己的博客创建</span>
+<pre style="background-color: #292b30; padding: 15px; border-radius: 10px;" class="shiki material-theme-palenight"><code>
+    <span class="line"><span style="color:#FFCB6B;">npm</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">create</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">@sugarat/theme@latest</span></span>
+    <br/>
+    <br/>
+    <span class="line"><span style="color:#B392F0;">bun create</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">@sugarat/theme</span><span style="color:#E1E4E8;"> </span></span>
+</code>
+</pre>'
+tag:
+ - SOP
+top: 1
+sidebar: true
+---
