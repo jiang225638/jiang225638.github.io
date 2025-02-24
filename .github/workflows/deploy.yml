@@ -10,8 +10,8 @@ on:
       - main
     # 只在下列路径变更时触发
     paths:
-      - 'docs/**'
-      - 'package.json'
+      - '/docs/**'
+      - '/package.json'
 
 # 设置权限
 permissions:
