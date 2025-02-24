@@ -9,6 +9,14 @@
     "build": "vitepress build docs",
     "serve": "vitepress serve docs"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiang225638/jiang225638.github.io"
+  },
+  "bugs": {
+    "url": "https://github.com/jiang225638/jiang225638.github.io/issues"
+  },
+  "homepage": "https://github.com/jiang225638/jiang225638.github.io#readme",
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "@sugarat/theme": "^0.5.4",
