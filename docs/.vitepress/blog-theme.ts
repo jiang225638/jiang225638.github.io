@@ -28,6 +28,12 @@ const blogTheme = getThemeConfig({
   // mermaid: true
   // 页脚
   footer: {
+    version: false,
+    // version: {
+    //   name: 'theme',
+    //   // icon: '',
+    //   // link: ''
+    // },
     // message 字段支持配置为HTML内容，配置多条可以配置为数组
     // message: '下面 的内容和图标都是可以修改的噢（当然本条内容也是可以隐藏的）',
     copyright: 'MIT License | 西红柿炒鸡蛋'
@@ -57,10 +63,10 @@ const blogTheme = getThemeConfig({
       url: 'https://github.com/jiang225638/jiang225638.github.io'
     },
     {
-      nickname: 'Vitepress',
-      des: 'Vite & Vue Powered Static Site Generator',
-      avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
-      url: 'https://github.com/jiang225638/jiang225638.github.io'
+      nickname: '姚利锋',
+      des: '姚利锋的博客',
+      avatar: '',
+      url: 'https://yaolifeng.com/'
     }
   ]
 
