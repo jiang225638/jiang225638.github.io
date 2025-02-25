@@ -13,11 +13,15 @@ export const nav: DefaultTheme.Config['nav'] = [
       { text: 'vue', link: '/skill/frontend/vue/' },
       { text: 'react', link: '/skill/frontend/react/' },
       { text: 'nestjs', link: '/skill/frontend/nestjs/base/' },
-      { text: 'JAVA', link: '/skill/frontend/java/2024-06-26/' }
+      { text: 'JAVA', link: '/skill/frontend/java/2024-06-26/' },
+      {
+        text: '精彩文章',
+        link: '/excellentArticle/'
+      }
     ]
   },
   {
-    text: '看过的文章',
+    text: '生活',
     link: '/excellentArticle/'
   }
 ]

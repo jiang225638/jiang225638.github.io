@@ -58,11 +58,11 @@ export default defineConfig({
     //   ] },
     // ],
     nav: nav,
-    socialLinks: [
-      {
-        icon: 'github',
-        link: 'https://github.com/jiang225638/jiang225638.github.io'
-      }
-    ]
+    // socialLinks: [
+      // {
+      //   icon: 'github',
+      //   link: 'https://github.com/jiang225638/jiang225638.github.io'
+      // }
+    // ]
   }
 })

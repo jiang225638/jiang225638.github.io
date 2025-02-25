@@ -56,16 +56,10 @@ const blogTheme = getThemeConfig({
   // 友链
   friend: [
     {
-      nickname: '西红柿炒鸡蛋',
-      des: '你的指尖用于改变世界的力量',
-      avatar:
-        'https://cdn.jsdelivr.net/gh//jiang225638/Cloud-Image-Hosting/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240927165257.jpg',
-      url: 'https://github.com/jiang225638/jiang225638.github.io'
-    },
-    {
       nickname: '姚利锋',
       des: '姚利锋的博客',
-      avatar: '',
+      avatar:
+        'https://cdn.jsdelivr.net/gh//jiang225638/Cloud-Image-Hosting/%E7%94%9F%E6%B0%94.jpg',
       url: 'https://yaolifeng.com/'
     }
   ]
