@@ -30,7 +30,7 @@ const blogTheme = getThemeConfig({
   footer: {
     // message 字段支持配置为HTML内容，配置多条可以配置为数组
     // message: '下面 的内容和图标都是可以修改的噢（当然本条内容也是可以隐藏的）',
-    copyright: 'MIT License | 爱吃西红柿炒鸡蛋',
+    copyright: 'MIT License | 西红柿炒鸡蛋'
     // icpRecord: {
     //   name: '蜀ICP备19011724号',
     //   link: 'https://beian.miit.gov.cn/'
@@ -45,25 +45,24 @@ const blogTheme = getThemeConfig({
   themeColor: 'el-blue',
 
   // 文章默认作者
-  author: '爱吃西红柿炒鸡蛋',
+  author: '西红柿炒鸡蛋',
 
   // 友链
   friend: [
     {
-      nickname: '爱吃西红柿炒鸡蛋',
+      nickname: '西红柿炒鸡蛋',
       des: '你的指尖用于改变世界的力量',
       avatar:
-        'https://img.cdn.sugarat.top/mdImg/MTY3NDk5NTE2NzAzMA==674995167030',
-      url: 'https://github.com/jiang225638/jiang225638.github.io',
+        'https://cdn.jsdelivr.net/gh//jiang225638/Cloud-Image-Hosting/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240927165257.jpg',
+      url: 'https://github.com/jiang225638/jiang225638.github.io'
     },
     {
       nickname: 'Vitepress',
       des: 'Vite & Vue Powered Static Site Generator',
-      avatar:
-        'https://vitepress.dev/vitepress-logo-large.webp',
-      url: 'https://github.com/jiang225638/jiang225638.github.io',
-    },
-  ],
+      avatar: 'https://vitepress.dev/vitepress-logo-large.webp',
+      url: 'https://github.com/jiang225638/jiang225638.github.io'
+    }
+  ]
 
   // 公告
   // popover: {
