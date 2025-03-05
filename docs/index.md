@@ -15,7 +15,7 @@ blog:
   logo: 'https://cdn.jsdelivr.net/gh//jiang225638/Cloud-Image-Hosting/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240927165257.jpg'
 
   # 设置 inspiringTimeout 可以实现自动切换
-  inspiringTimeout: 3000
+  inspiringTimeout: 6000
   pageSize: 6
 
   # 移动端隐藏头部头像展示minScreenAvatar

@@ -1,7 +1,5 @@
-<h1 align="center"> VitePress @sugarat/theme </h1>
-
 <p align="center">
-简约风的 <a href="https://theme.sugarat.top"  target="_blank"target="_blank">VitePress 博客主题</a> 示例运行项目。
+简约风的 <a href="https://theme.sugarat.top"  target="_blank"target="_blank">VitePress 博客主题</a> 
 </p>
 
 <p align="center">
@@ -44,8 +42,6 @@ pnpm serve
 
 ① Github Pages 开启 Git Actions 部署支持
 
-![](https://img.cdn.sugarat.top/mdImg/sugar/8a2454c628d0e2abcc7a0451ddd7d2dc)
-
 ② 复制文件 `.github/workflows/deploy.yml` 到自己的项目相同目录下
 
 示例项目已包含，可以直接进行下一步
@@ -60,7 +56,7 @@ pnpm serve
 // 省略无关代码
 const base = '/vitepress-blog-sugar-template/'
 export default defineConfig({
-  base,
+  base
 })
 ```
 
