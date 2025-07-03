@@ -1,31 +1,30 @@
-import type { TeekConfig } from "vitepress-theme-teek/config";
-import { version } from "vitepress-theme-teek/es/version";
-import { FooterInfo } from "../../ConfigHyde/FooterInfo"; //导入底部信息配置
-import { FriendLink } from "../../ConfigHyde/FriendLink"; // 导入FriendLink模块
-import { HitokotoDate } from "../../ConfigHyde/HitokotoDate"; // 导入HitokotoData模块
-import { Wallpaper } from "../../ConfigHyde/Wallaper"; // 导入Wallaper模块
-import { SocialDate } from "../../ConfigHyde/SocialDate"; // 导入SocialDate社交信息模块
-
+import type { TeekConfig } from 'vitepress-theme-teek/config'
+import { version } from 'vitepress-theme-teek/es/version'
+import { FooterInfo } from '../../ConfigHyde/FooterInfo' //导入底部信息配置
+import { FriendLink } from '../../ConfigHyde/FriendLink' // 导入FriendLink模块
+import { HitokotoDate } from '../../ConfigHyde/HitokotoDate' // 导入HitokotoData模块
+import { Wallpaper } from '../../ConfigHyde/Wallaper' // 导入Wallaper模块
+import { SocialDate } from '../../ConfigHyde/SocialDate' // 导入SocialDate社交信息模块
 
 // 文档配置
 export const teekDocConfig: TeekConfig = {
   // 默认配置
   footerInfo: {
     theme: {
-      name: `Theme By Teek@${version}`,
+      name: `Theme By Teek@${version}`
     },
     copyright: {
       createYear: 2025,
-      suffix: "One Blog",
-    },
-  },  
+      suffix: 'J Blog'
+    }
+  },
 
   themeEnhance: {
     layoutSwitch: {
-      defaultMode: "bothWidthAdjustable",
-    },
-  },
-};
+      defaultMode: 'bothWidthAdjustable'
+    }
+  }
+}
 
 // 博客基础配置
 const teekBlogCommonConfig: TeekConfig = {
@@ -33,21 +32,21 @@ const teekBlogCommonConfig: TeekConfig = {
   vpHome: false,
 
   banner: {
-    name: "One Blog 🎉", // Banner 标题，默认读取 vitepress 的 title 属性
-    pureBgColor: "#28282d", // Banner 背景色。bgStyle 为 pure 时生效
+    name: 'J Blog 🎉', // Banner 标题，默认读取 vitepress 的 title 属性
+    pureBgColor: '#28282d', // Banner 背景色。bgStyle 为 pure 时生效
     imgSrc: Wallpaper,
-    descStyle: "types",
+    descStyle: 'types',
     description: HitokotoDate, // 打字机描述信息,
-    bgStyle: "fullImg",
-    mask: false,
-  },  
+    bgStyle: 'fullImg',
+    mask: false
+  },
 
   // 首页顶部按 F11 开启壁纸模式
   wallpaper: {
     enabled: true, // 是否启用壁纸模式
     hideBanner: false, // 开启壁纸模式后，全屏是否显示打字机文案，
     hideMask: true, // 开启壁纸模式后，是否隐藏 Banner 或 bodyBgImage 的遮罩层，则确保 banner.mask 和 bodyBgImage.mask 为 true 才生效
-    hideWaves: false, // 开启壁纸模式后，是否隐藏 Banner 波浪组件，仅 banner.bgStyle = 'fullImg' 生效
+    hideWaves: false // 开启壁纸模式后，是否隐藏 Banner 波浪组件，仅 banner.bgStyle = 'fullImg' 生效
   },
   // footerInfo: {
   //   customHtml: `<span id="runtime"></span>`, // 需要搭配 .vitepress/theme/helper/useRuntime.ts 使用
@@ -55,17 +54,14 @@ const teekBlogCommonConfig: TeekConfig = {
 
   friendLink: FriendLink, // 友链配置
   social: SocialDate, //社交信息配置
-  footerInfo: FooterInfo, // 底部信息配置  
-  
+  footerInfo: FooterInfo, // 底部信息配置
 
-
-  
   docAnalysis: {
-    createTime: "2025-03-23",
+    createTime: '2025-03-23',
     statistics: {
-      provider: "busuanzi",
-    },
-  },
+      provider: 'busuanzi'
+    }
+  }
   // friendLink: {
   //   list: [
   //     {
@@ -131,82 +127,81 @@ const teekBlogCommonConfig: TeekConfig = {
   //     link: "https://gitee.com/kele-bingtang",
   //   },
   // ],
-};
+}
 
 // 博客默认配置
 export const teekBlogConfig: TeekConfig = {
   ...teekBlogCommonConfig,
   banner: {
-    name: "🎉 One Blog",
-    description: "故事由我书写，旅程由你见证，传奇由她聆听 —— 来自 Young Kbt",
-    bgStyle: "partImg",
-  },
-};
+    name: '🎉 J Blog',
+    description: '唯一真正的智慧，是知道自己一无所知。 —— 来自 J',
+    bgStyle: 'partImg'
+  }
+}
 
 // 博客小图配置
 export const teekBlogParkConfig: TeekConfig = {
   ...teekBlogCommonConfig,
   banner: {
-    name: "🎉 One Blog",
-    bgStyle: "partImg",
-    imgSrc: ["/blog/bg1.webp", "/blog/bg2.webp", "/blog/bg3.webp"],
+    name: '🎉 J Blog',
+    bgStyle: 'partImg',
+    imgSrc: ['/blog/bg1.webp', '/blog/bg2.webp', '/blog/bg3.webp'],
     description: [
-      "故事由我书写，旅程由你见证，传奇由她聆听 —— 来自 Young Kbt",
-      "积跬步以至千里，致敬每个爱学习的你 —— 来自 Evan Xu",
-      "这一生波澜壮阔或是不惊都没问题 —— 来自 Weibw",
+      '水的清澈，并非因为它不含杂质，而是在于沉淀；心的通透，不是因为没有杂念，而是在于明白取舍‌——诠释沉淀与选择的智慧',
+      '平和地接纳，不屈地奋斗，坚定地前行‌——以静水流深的力量应对挑战。‌‌',
+      '所有逆袭都是有备而来，所有光芒需要时间才能被看到‌——强调积累与坚持的价值。‌‌'
     ],
-    descStyle: "switch",
-  },
-};
+    descStyle: 'switch'
+  }
+}
 
 // 博客大图配置
 export const teekBlogFullConfig: TeekConfig = {
   ...teekBlogCommonConfig,
   post: {
-    coverImgMode: "full",
+    coverImgMode: 'full'
   },
   banner: {
-    name: "🎉 One Blog",
-    bgStyle: "fullImg",
-    imgSrc: ["/blog/bg1.webp", "/blog/bg2.webp", "/blog/bg3.webp"],
+    name: '🎉 J Blog',
+    bgStyle: 'fullImg',
+    imgSrc: ['/blog/bg1.webp', '/blog/bg2.webp', '/blog/bg3.webp'],
     description: [
-      "故事由我书写，旅程由你见证，传奇由她聆听 —— 来自 Young Kbt",
-      "积跬步以至千里，致敬每个爱学习的你 —— 来自 Evan Xu",
-      "这一生波澜壮阔或是不惊都没问题 —— 来自 Weibw",
+      '水的清澈，并非因为它不含杂质，而是在于沉淀；心的通透，不是因为没有杂念，而是在于明白取舍‌——诠释沉淀与选择的智慧',
+      '平和地接纳，不屈地奋斗，坚定地前行‌——以静水流深的力量应对挑战。‌‌',
+      '所有逆袭都是有备而来，所有光芒需要时间才能被看到‌——强调积累与坚持的价值。‌‌'
     ],
-    descStyle: "types",
+    descStyle: 'types'
   },
   comment: {
-    provider: "giscus",
+    provider: 'giscus',
     options: {
-      repo: "Kele-Bingtang/vitepress-theme-teek",
-      repoId: "R_kgDONpVfBA",
-      category: "Announcements",
-      categoryId: "DIC_kwDONpVfBM4Cm3v9",
-    },
-  },
-};
+      repo: 'Kele-Bingtang/vitepress-theme-teek',
+      repoId: 'R_kgDONpVfBA',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDONpVfBM4Cm3v9'
+    }
+  }
+}
 
 // 博客全图配置
 export const teekBlogBodyConfig: TeekConfig = {
   ...teekBlogCommonConfig,
-  pageStyle: "segment-nav",
+  pageStyle: 'segment-nav',
   bodyBgImg: {
-    imgSrc: ["/blog/bg1.webp", "/blog/bg2.webp", "/blog/bg3.webp"],
+    imgSrc: ['/blog/bg1.webp', '/blog/bg2.webp', '/blog/bg3.webp']
   },
   themeEnhance: {
     layoutSwitch: {
-      defaultMode: "original",
-    },
-  },
-};
+      defaultMode: 'original'
+    }
+  }
+}
 
 // 博客卡片配置
 export const teekBlogCardConfig: TeekConfig = {
   ...teekBlogCommonConfig,
   post: {
-    postStyle: "card",
+    postStyle: 'card'
   },
-  homeCardListPosition: "left",
-
-};
+  homeCardListPosition: 'left'
+}

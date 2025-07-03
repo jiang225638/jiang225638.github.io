@@ -29,11 +29,11 @@ export const FooterInfo = {
     `<script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/3LmZHLhDZIDpMaT0/quote.js?theme=#1690FF,#333333,#999999,#007BFF,#FFFFFF,#1690FF,12&f=12&display=0,0,1,1,1,1,1,1"></script>`,
     `<span id="runtime"></span>(●'◡'●)`,
     `<a href="https://51.la/" target="_blank" style="display:flex;align-items:center;justify-content:center;">本网站由<img src="https://51.la/favicon.ico" style="width:16px;height:16px;" alt="51.LA"> 51.LA 提供数据统计服务</a>`,
-    "初闻不知曲中意，再听已是曲中人",
+    "唯一真正的智慧，是知道自己一无所知。 —— 来自 J",
   ],
   copyright: {
     createYear: 2021,
-    suffix: "One Blog",
+    suffix: "J Blog",
   },
   icpRecord: {
     name: "陇ICP备2023002645号",
