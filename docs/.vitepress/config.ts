@@ -189,7 +189,7 @@ const teekConfig = defineTeekConfig({
     duration: 3000, // 弹框定时自动关闭，0 不自动消失
     mobileMinify: false, // 移动端自动最小化
     reopen: true, // 关闭公告弹框后，是否支持重新打开，如果为 false，则代表公告只显示一次
-    useStorage: true, // 是否使用 localStorage 存储公告状态，如：当打开公告弹框后，下次进来则自动打开弹框
+    useStorage: false, // 是否使用 localStorage 存储公告状态，如：当打开公告弹框后，下次进来则自动打开弹框
     twinkle: false, // 公告图标是否打开闪烁提示
     position: "center", // 公告弹框出现位置
   },
