@@ -1,0 +1,35 @@
+/* 定义自定义中文字体 */
+// @font-face {
+//   font-family: "Ali_PuHuiTi";
+//   src: url("/fonts/阿里普惠体/Alibaba_PuHuiTi_2.0_55_Regular_55_Regular.ttf") format("truetype");
+//   font-weight: 300;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+// @font-face {
+//   font-family: "霞鹜文楷";
+//   src: url("/fonts/霞鹜文楷/霞鹜文楷.ttf") format("truetype");
+//   font-weight: 300;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+@font-face {
+  font-family: "筑紫A丸";
+  // src: url("/fonts/筑紫A丸/TsukuARdGothicStd-Regular.woff2") format("woff2");
+  src: url("https://img.onedayxyy.cn/images/TsukuARdGothicStd-Regular.woff2") format("woff2");
+  // src: url("/fonts/筑紫A丸/TsukuARdGothicStd-Regular.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+/* 应用字体 */
+:root {
+  // --vp-font-family-base: "筑紫A丸", "Ali_PuHuiTi", "霞鹜文楷", "PingFang SC", sans-serif; //base：影响正文、标题等文本。 
+  --vp-font-family-base: "筑紫A丸", "PingFang SC", sans-serif; //base：影响正文、标题等文本。 
+  --vp-font-family-mono: "consolas", "JetBrains Mono", "Cascadia Mono", "Not Sans SC", monospace; //mono：影响代码块的等宽字体。  
+}

@@ -1,0 +1,11 @@
+{
+    "sftpUploader": {
+        "url": "https://img.onedayxyy.cn",
+        "path": "/images/{fullName}",
+        "uploadPath": "/images/{fullName}",
+        "host": "你的云服务器IP",
+        "port": 22,
+        "username": "root",
+        "password": "你的云服务器root密码"
+    }
+}

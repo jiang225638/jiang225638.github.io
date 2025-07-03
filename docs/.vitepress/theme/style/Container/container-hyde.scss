@@ -1,0 +1,68 @@
+// container-hyde 容器样式
+@use "./container-bg.scss";
+@use "./container-border-left.scss";
+// @use "./container-border.scss";
+$show-border-left: true; // 是否显示左边框 默认：false
+
+/* INFO 容器背景色、线条边框 */
+.custom-block.info {
+  background-color: var(--custom-block-info-bg);
+  border: 1.5px solid var(--custom-block-info-border);
+  @if $show-border-left {
+    border-left: 3px solid var(--custom-block-info-left);
+  }
+}
+
+/* TIP 容器边框色、背景色、线条边框 */
+.custom-block.tip {
+  background-color: var(--custom-block-tip-bg);
+  border: 1.5px solid var(--custom-block-tip-border);
+  @if $show-border-left {
+    border-left: 3px solid var(--custom-block-tip-left);
+  }
+}
+
+/* Warning 容器背景色、线条边框 */
+.custom-block.warning {
+  background-color: var(--custom-block-warning-bg);
+  border: 1.5px solid var(--custom-block-warning-border);
+  @if $show-border-left {
+    border-left: 3px solid var(--custom-block-warning-left);
+  }
+}
+
+/* Danger 容器背景色、线条边框 */
+.custom-block.danger {
+  background-color: var(--custom-block-danger-bg);
+  border: 1.5px solid var(--custom-block-danger-border);
+  @if $show-border-left {
+    border-left: 3px solid var(--custom-block-danger-left);
+  }
+}
+
+// details 容器背景色、线条边框
+.custom-block.details {
+  background-color: var(--custom-block-details-bg);
+  border: 1px solid var(--custom-block-details-border);
+  @if $show-border-left {
+    border-left: 3px solid var(--custom-block-details-left);
+  }
+}
+
+/* NOTE 容器背景色、线条边框 */
+.custom-block.note {
+  border: 1px solid var(--custom-block-note-border);
+  border-left: 3px solid var(--custom-block-note-left);
+}
+
+/* IMPORTANT 容器背景色、线条边框 */
+.custom-block.important {
+  background-color: var(--custom-block-important-bg);
+  border-left: 3px solid var(--custom-block-important-left);
+}
+
+/* CAUTION 容器背景色、线条边框 */
+.custom-block.caution {
+  background-color: var(--custom-block-caution-bg);
+  border-left: 3px solid var(--custom-block-caution-left);
+}

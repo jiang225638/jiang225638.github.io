@@ -1,0 +1,206 @@
+/* var.scss */
+:root {
+  --vp-c-brand-1: var(--vp-c-indigo-2);
+
+  --vp-c-indigo-2: #299764; //预设hover
+  --vp-c-indigo-3: #299764; //预设
+  --vp-c-green-2: #299764; //绿色hover
+  --vp-c-green-3: #30a46c; //绿色
+  --vp-c-yellow-2: #e7a200; //黄色hover
+  --vp-c-yellow-3: #ffb400; //黄色
+  // --vp-c-red-2: #d5393e; //红色hover
+  // --vp-c-red-3: #e0575b; //红色
+}
+
+@mixin text-clip-common {
+  background-clip: text; /* 标准语法，裁剪背景到文字 */
+  -webkit-background-clip: text; /* Safari/Chrome 前缀兼容 */
+  color: transparent; /* 让文字透明，露出背景渐变 */
+  display: inline-block; /* 让背景仅包裹文字，而非整行 */
+}
+
+@mixin text-gradient {
+  background-image: linear-gradient(
+    107deg,
+    rgb(255, 182, 133) -30.6%,
+    rgb(255, 111, 29) -1.11%,
+    rgb(252, 181, 232) 39.14%,
+    rgb(135, 148, 255) 73.35%,
+    rgb(60, 112, 255) 97.07%,
+    rgb(60, 112, 255) 118.97%
+  );
+  @include text-clip-common;
+}
+
+// .VPDoc h1 {
+//   @include text-gradient;
+//     // 换行
+//   display: table-row-group;
+// }
+
+// .VPDoc h2 {
+//   @include text-gradient;
+// }
+// 让md里的h2标题为紫色
+.VPDoc h2 {
+  background: -webkit-linear-gradient(10deg, #bd34fe 5%, #e43498 15%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+// 草莓熊色
+// #hero-text,
+// .VPHero.has-image .name {
+//   @include text-gradient;
+// }
+
+.VPHero.has-image .tagline {
+  background: linear-gradient(to right, rgb(48, 153, 255) 0%, rgb(141, 133, 255) 63%, rgb(79, 76, 255) 100%) text;
+  @include text-clip-common;
+}
+// 链接下划线
+.vp-doc a {
+  text-decoration: none;
+}
+
+// /* 鼠标样式 */
+body {
+  cursor: url(/mouse/default.cur), auto;
+}
+
+a,
+button,
+img,
+svg,
+input,
+textarea,
+select,
+option,
+label,
+span {
+  cursor: url(/mouse/pointer.cur), auto !important;
+}
+
+// 看板娘提示宽度
+#oml2d-tips {
+  width: 200px !important;
+}
+
+// 切换路由进度条颜色样式
+.nprogress .bar {
+  background: linear-gradient(
+    114.2deg,
+    rgba(184, 215, 21, 1) -15.3%,
+    rgba(148, 187, 233, 1) 14.5%,
+    rgba(21, 215, 182, 1) 38.7%,
+    rgba(129, 189, 240, 1) 58.8%,
+    rgba(219, 108, 205, 1) 77.3%,
+    rgba(240, 129, 129, 1) 88.5%
+  ) !important;
+}
+
+
+
+
+
+// ----
+/* 页脚微章居中 */
+.tk-footer-info p {
+  display: flex;
+  justify-content: center;
+}
+
+/* 移动端页脚微章布局 */
+@media (max-width: 768px) {
+  .tk-footer-info p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-weight: 500;
+  }
+
+  .tk-footer-info p a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2rem;
+  }
+}
+
+/* 页脚微章图片 */
+.tk-footer-info p img {
+  margin-left: 10px;
+}
+
+
+
+// ----
+
+
+
+
+
+
+// 在 var.css 中添加这样的代码 /* 侧边栏缩放 */
+// .group:has([role='button']) .VPSidebarItem.level-0 .items {
+//   padding-left: 15px !important;
+//   border-left: 1px solid var(--vp-c-divider);
+//   border-radius: 2px;
+//   transition: background-color 0.25s;
+// }
+
+// /* 侧边栏图标 */
+// /* 选中所有 .VPSidebarItem 元素，排除带有 .is-link 类的 */
+// #VPSidebarNav .VPSidebarItem:not(.is-link).collapsed >.item {
+//     display: inline-flex;
+//     align-items: center;  /* 垂直居中对齐图标和文本 */
+// }
+
+// /* 为所有不带 .is-link 的 .VPSidebarItem 折叠状态添加图标 */
+// #VPSidebarNav .VPSidebarItem:not(.is-link).collapsed >.item::before {
+//     content: '';
+//     background-image: url('/svg/document.svg'); /* 设置图标路径 */
+//     width: 16px;
+//     height: 16px;
+//     display: inline-block;
+//     vertical-align: middle;  /* 确保图标与文本垂直居中 */
+//     background-size: cover;
+//     margin-right: 4px;  /* 给图标和文本之间增加间距 */
+// }
+
+// #VPSidebarNav .VPSidebarItem:not(.is-link) >.item {
+//     display: inline-flex;
+//     align-items: center;  /* 垂直居中对齐图标和文本 */
+// }
+
+// /* 为所有不带 .is-link 的 .VPSidebarItem 非折叠状态添加图标 */
+// #VPSidebarNav .VPSidebarItem:not(.is-link) >.item::before {
+//     content: '';
+//     background-image: url('/svg/document-open.svg'); /* 设置图标路径 */
+//     width: 16px;
+//     height: 16px;
+//     display: inline-block;
+//     vertical-align: middle;  /* 确保图标与文本垂直居中 */
+//     background-size: cover;
+//     margin-right: 4px;  /* 给图标和文本之间增加间距 */
+// }
+
+// /* 选中带有 .is-link 的 .VPSidebarItem 的直接子元素 .item */
+// #VPSidebarNav .VPSidebarItem.is-link > .item {
+//     display: inline-flex;
+//     align-items: center;  /* 垂直居中图标和文字 */
+// }
+
+// /* 为选中的 .item 添加图标 */
+// #VPSidebarNav .VPSidebarItem.is-link > .item::before {
+//     content: '';
+//     background-image: url('/svg/file.svg'); /* 图标路径 */
+//     width: 16px;
+//     height: 16px;
+//     display: inline-block;
+//     vertical-align: middle;
+//     background-size: cover;
+//     margin-right: 4px;  /* 图标与文字间距 */
+// }

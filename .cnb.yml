@@ -1,0 +1,74 @@
+master:
+  push:
+    - runner:
+        cpus: 16
+      services:
+        - docker
+        - git-clone-yyds
+      docker:
+        image: docker.cnb.cool/znb/images/node:18
+        volumes:
+          - /data/.cache:copy-on-write #声明式的构建缓存
+      stages:
+        - name: 🖨️ 打印环境
+          if: |
+            [ "$CNB_COMMIT_MESSAGE_TITLE" = "BUILD" ]
+          script: |
+            node -v && npm -v && yarn -v && pnpm -v
+        - name: 📦️ 安装依赖 
+          if: |
+            [ "$CNB_COMMIT_MESSAGE_TITLE" = "BUILD" ]          
+          script: |
+            pnpm install
+            
+        - name: ⚗️ 编译项目
+          if: |
+            [ "$CNB_COMMIT_MESSAGE_TITLE" = "BUILD" ]        
+          script: |
+            pnpm docs:build   # VitePress 专用命令
+        - name: 🚚 发布制品
+          if: |
+            [ "$CNB_COMMIT_MESSAGE_TITLE" = "BUILD" ]            
+          image: tencentcom/rsync
+          imports: https://cnb.cool/onedayxyy/vitepress-theme-teek-one-private/-/blob/master/env.yaml
+          settings:
+            user: ${SSH_USER}
+            key: ${SSH_KEY}
+            port: 22
+            hosts:
+              - ${ECS_IP}
+            source: docs/.vitepress/dist/
+            target: /root/rsync/rsync-vitepress/dist/
+            delete: true
+            prescript:
+              - echo "prescript"
+              - ls -l  /root/rsync/rsync-vitepress/dist/
+            # script:
+            #   - echo "after script"
+            #   - ls -l /root/rsync/rsync-vitepress/dist/
+            #   - date
+            #   # - bash  /root/website_music.sh
+            #   - aliyun cdn RefreshObjectCaches --ObjectType File --ObjectPath "onedayxyy.cn/" #刷新阿里云cdn缓存
+
+        # - name: 🔔 发布通知
+        #   image: tencentcom/wecom-message
+        #   settings:
+        #     robot: ${WECOM_BOT}
+        #     msgType: markdown
+        #     content: |
+        #       > **🎉 JenkinsGuide 又一次发布啦！**
+        #       > **构建时间:** $CUSTOM_ENV_DATE_INFO
+        #       > **提交信息:** $CNB_COMMIT_MESSAGE_TITLE
+        #       > **仓库地址:** [$CNB_REPO_URL_HTTPS]($CNB_REPO_URL_HTTPS)
+
+        #同步仓库到gitee                  
+        - name: sync to gitee
+          image: tencentcom/git-sync
+          imports: https://cnb.cool/onedayxyy/vitepress-theme-teek-one-private/-/blob/master/env.yaml
+          settings:
+            branch: master
+            auth_type: https
+            username: ${GIT_USERNAME}
+            password: ${GIT_ACCESS_TOKEN}
+            target_url: https://gitee.com/onlyonexl/vitepress-theme-teek-one-private.git
+            # git_email: 'github-actions[bot]@users.noreply.github.com'

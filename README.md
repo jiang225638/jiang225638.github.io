@@ -1,65 +1,66 @@
-<p align="center">
-简约风的 <a href="https://theme.sugarat.top"  target="_blank"target="_blank">VitePress 博客主题</a> 
-</p>
+<h1 align="center">vitepress-theme-teek</h1>
+
+<div align="center">
+
+[Github](https://github.com/Kele-Bingtang/vitepress-theme-teek) ｜ [Gitee](https://gitee.com/kele-bingtang/vitepress-theme-teek) ｜ [Preview](https://notes.teek.top/) ｜[Docs](http://vp.teek.top/)
+
+✨一个轻量、简洁高效、灵活配置、易于扩展的 VitePress  主题。
+
+</div>
 
 <p align="center">
-    <a href="https://atqq.github.io/vitepress-blog-sugar-template/" target="_blank">GitHub Pages Demo</a>
+  <a title="Github release" target="_blank" href="https://github.com/Kele-Bingtang/vitepress-theme-teek/releases">
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Kele-Bingtang/vitepress-theme-teek?logo=github">
+  </a>
+
+  <a title="Npm Version" target="_blank" href="https://www.npmjs.com/package/vitepress-theme-teek">
+    <img src="https://img.shields.io/npm/v/vitepress-theme-teek?logo=npm&color=%09%23bf00ff" alt="https://img.shields.io/npm/v/vitepress-theme-teek?color=%09%23bf00ff">
+  </a>
+
+  <img src="https://img.shields.io/badge/v18.x-x?logo=node.js&label=node" alt="node version">
+  <img src="https://img.shields.io/github/languages/code-size/Kele-Bingtang/vitepress-theme-teek?logo=Visual Studio Code&logoColor=blue" alt="GitHub code size in bytes">
+
+  <a title="GitHub Discussions" target="_blank" href="https://github.com/Kele-Bingtang/vitepress-theme-teek/discussions">
+    <img src="https://img.shields.io/github/discussions/Kele-Bingtang/vitepress-theme-teek?color=9cf&logo=github" alt="GitHub Discussions">
+  </a>
+
+  <a title="MIT License" target="_blank" href="https://github.com/Kele-Bingtang/vitepress-theme-teek/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License">
+  </a>
 </p>
 
-## Usage
+## Teek 在线安装
 
-先安装 `pnpm`
+具体信息见如下链接：《[Teek](https://onedayxyy.cn/teek.html)》
 
-```sh
-npm i -g pnpm
+![image-20250702074216619](https://img.onedayxyy.cn/images/image-20250702074216619.png)
+
+## 本地运行
+
+项目拉取
+
+```bash
+git clone https://github.com/Kele-Bingtang/vitepress-theme-teek.git
 ```
 
-安装依赖
+依赖安装（只能用 pnpm 安装依赖）
 
-```sh
+```bash
 pnpm install
 ```
 
-开发启动
+引用包构建
 
-```sh
-pnpm dev
+```bash
+pnpm stub
 ```
 
-构建
+文档项目启动
 
-```sh
-pnpm build
+```bash
+pnpm docs:dev
 ```
 
-预览产物
+## License
 
-```sh
-pnpm serve
-```
-
-## Github Pages 部署
-
-① Github Pages 开启 Git Actions 部署支持
-
-② 复制文件 `.github/workflows/deploy.yml` 到自己的项目相同目录下
-
-示例项目已包含，可以直接进行下一步
-
-③ 修改 `docs/.vitepress/config.mts` 里的构建配置
-
-**如果项目名已经为 name.github.io 域名，则不需要修改，保持默认值 `/` 即可**
-
-`base` 改为 `"/仓库名/"` 即可
-
-```ts
-// 省略无关代码
-const base = '/vitepress-blog-sugar-template/'
-export default defineConfig({
-  base
-})
-```
-
-④ 推送 `main` 分支即可
-
-需要进一步修改部署和构建配置，详见`deploy.yml` 文件。
+[MIT](./LICENSE) License © 2025 [Teeker](https://github.com/Kele-Bingtang)

@@ -1,0 +1,54 @@
+// 容器背景色
+// 亮色主题变量
+:root {
+    // 信息区块
+    --custom-block-info-bg: #f4f4f5;
+
+    // 提示区块
+    --custom-block-tip-bg: #ecf7fe;
+
+    // 警告区块
+    --custom-block-warning-bg: #fdf6ec;
+
+    // 危险区块
+    --custom-block-danger-bg: #fef0f0;
+
+    // 详情区块
+    --custom-block-details-bg: #f0f6ff;
+
+    // 笔记区块
+    --custom-block-note-bg: #eef9fd;
+
+    // 重要区块
+    --custom-block-important-bg: #f4eefe;
+
+    // 注意区块
+    --custom-block-caution-bg: #fde4e8;
+}
+
+// 暗色主题变量
+.dark {
+    // 信息区块
+    --custom-block-info-bg: #474748;
+
+    // 提示区块
+    --custom-block-tip-bg: #3764aba8;
+
+    // 警告区块
+    --custom-block-warning-bg: #4d3800;
+
+    // 危险区块
+    --custom-block-danger-bg: #4b1113;
+
+    // 详情区块
+    --custom-block-details-bg: #65758529;
+
+    // 笔记区块
+    --custom-block-note-bg: #193c47;
+
+    // 重要区块
+    --custom-block-important-bg: #230555;
+
+    // 注意区块
+    --custom-block-caution-bg: #391c22;
+}

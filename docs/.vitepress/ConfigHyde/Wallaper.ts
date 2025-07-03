@@ -1,0 +1,22 @@
+// 首页壁纸
+export const Wallpaper = [
+  "/img/bg/1.webp", 
+  "/img/bg/2.webp", 
+  "/img/bg/3.webp", 
+  "/img/bg/4.webp", 
+  "/img/bg/5.webp", 
+  "/img/bg/6.webp", 
+  "/img/bg/7.webp", 
+  "/img/bg/8.webp", 
+  "/img/bg/9.webp", 
+  "/img/bg/10.webp", 
+  "/img/bg/11.webp", 
+  "/img/bg/12.webp", 
+  "/img/bg/13.webp", 
+  "/img/bg/14.webp", 
+  "/img/bg/15.webp", 
+  "/img/bg/16.webp",
+  "/img/bg/17.webp",
+  "/img/bg/18.webp",
+  "/img/bg/19.webp",
+];

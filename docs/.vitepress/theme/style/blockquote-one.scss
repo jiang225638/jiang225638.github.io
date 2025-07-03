@@ -1,0 +1,35 @@
+/* > 引用块样式 */
+  /* 引用块 */
+:root{
+  --blockquote-margin: 10px 0px;
+  --blockquote-padding: 10px;
+  // --blockquote-font-family: 'Ali_PuHuiTi';
+  --blockquote-font-size: 1.0rem;
+  --blockquote-font-weight: 300;
+  --blockquote-line-height: 1.5;
+  --blockquote-border-left: 5px solid #a68bff;           /* 默认引用块的左边框 */
+  --blockquote-background-color: #f3f0ff;
+
+  --blockquote-font : "Times", "Roboto Slab", serif;
+  --blockquote-color : rgba(117, 117, 117, 0.9);
+
+}
+
+.vp-doc blockquote {
+  border-radius: 10px;
+  margin: var(--blockquote-margin);
+  padding: var(--blockquote-padding);
+  // font-family: var(--blockquote-font-family);
+  font-size: var(--blockquote-font-size);
+  font-weight: var(--blockquote-font-weight);
+  line-height: var(--blockquote-line-height);
+  border-left: var(--blockquote-border-left);
+  background-color:  var(--blockquote-background-color);
+}
+
+
+
+
+
+
+

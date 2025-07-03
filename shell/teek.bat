@@ -1,0 +1,3 @@
+::添加自己要执行的任务
+echo  Push winodws docusaurus static data to ecs...
+rsync.exe -avPzruh --delete --port 8730 --password-file=/cygdrive/d/vitepress-theme-teek-one-private/shell/password.txt /cygdrive/d/vitepress-theme-teek-one-private/docs/.vitepress/dist root@你的云服务器IP::cmi-vitepress/

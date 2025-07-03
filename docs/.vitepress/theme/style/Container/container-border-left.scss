@@ -1,0 +1,45 @@
+// 容器边框左侧样式
+// 亮色主题变量
+:root {
+    /* INFO 容器左侧 */
+    --custom-block-info-left: #909399;
+    /* TIP 容器左侧 */
+    --custom-block-tip-left: #539dfd;
+    /* Warning 容器左侧 */
+    --custom-block-warning-left: #e6a23c;
+    /* Danger 容器左侧 */
+    --custom-block-danger-left: #f56c6c;
+    /* Details 容器左侧 */
+    --custom-block-details-left: #d9e8ff;
+
+    /* GitHub 风格警告 */
+
+    /* NOTE 容器左侧 */
+    --custom-block-note-left: #95cce9;
+    /* IMPORTANT 容器左侧 */
+    --custom-block-important-left: #c5a4fd;
+    /* Caution 容器左侧 */
+    --custom-block-caution-left: #ff6b6b;
+}
+
+// 暗色主题变量
+.dark {
+    /* INFO 容器左侧（中性信息） */
+    --custom-block-info-left: #75777e;
+    /* TIP 容器左侧（提示/建议） */
+    --custom-block-tip-left: #4a86e8;
+    /* Warning 容器左侧（警告/注意） */
+    --custom-block-warning-left: #f3b263;
+    /* Danger 容器左侧（危险/错误） */
+    --custom-block-danger-left: #f96262;
+    /* Details 容器左侧（细节/展开） */
+    --custom-block-details-left: #91c2ff;
+
+    /* GitHub 风格扩展 */
+    /* NOTE 容器左侧（备注/说明） */
+    --custom-block-note-left: #6ab9e6;
+    /* IMPORTANT 容器左侧（重要信息） */
+    --custom-block-important-left: #a577f7;
+    /* Caution 容器左侧（谨慎操作） */
+    --custom-block-caution-left: #ff4d4f;
+}

@@ -1,0 +1,54 @@
+// 容器边框样式
+// 亮色主题变量
+:root {
+  // 信息区块
+  --custom-block-info-border: #cccccc;
+
+  // 提示区块
+  --custom-block-tip-border: #539dfd;
+
+  // 警告区块
+  --custom-block-warning-border: #e6a700;
+
+  // 危险区块
+  --custom-block-danger-border: #e13238;
+
+  // 笔记区块
+  --custom-block-note-border: #90e0ff;
+
+  // 重要区块
+  --custom-block-important-border: #a371f7;
+
+  // 注意区块
+  --custom-block-caution-border: #e0575b;
+
+  // 详情区块
+  --custom-block-details-border: #5c6bc0;
+}
+
+// 暗色主题变量
+.dark {
+  // 信息区块
+  --custom-block-info-border: #cccccc;
+
+  // 提示区块
+  --custom-block-tip-border: #2583ff;
+
+  // 警告区块
+  --custom-block-warning-border: #e6a700;
+
+  // 危险区块
+  --custom-block-danger-border: #e13238;
+
+  // 笔记区块
+  --custom-block-note-border: #4cb3d4;
+
+  // 重要区块
+  --custom-block-important-border: #a371f7;
+
+  // 注意区块
+  --custom-block-caution-border: #e0575b;
+
+  // 详情区块
+  --custom-block-details-border: #5c6bc0;
+}
