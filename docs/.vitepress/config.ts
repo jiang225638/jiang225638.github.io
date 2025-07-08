@@ -321,8 +321,7 @@ export default defineConfig({
     },
     editLink: {
       text: '在 GitHub 上编辑此页',
-      pattern:
-        'https://github.com/Kele-Bingtang/vitepress-theme-teek/edit/master/docs/:path'
+      pattern: ''
     }
   },
 

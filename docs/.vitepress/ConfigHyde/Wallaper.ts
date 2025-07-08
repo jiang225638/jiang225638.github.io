@@ -19,4 +19,5 @@ export const Wallpaper = [
   "/img/bg/17.webp",
   "/img/bg/18.webp",
   "/img/bg/19.webp",
+  "/img/bg/20.webp",
 ];

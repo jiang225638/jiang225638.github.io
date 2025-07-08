@@ -36,13 +36,13 @@ export const FooterInfo = {
     suffix: "J Blog",
   },
   icpRecord: {
-    name: "陇ICP备2023002645号",
-    link: "http://beian.miit.gov.cn/",
+    name: "暂无备案编号",
+    link: "",
   },
   // 网络安全备案信息配置
   securityRecord: {
-    name: "甘公网安备62102702000211号",
-    link: "https://beian.mps.gov.cn/",
+    name: "暂无安全备案",
+    link: "",
   },
   customHtml: ``, // 搭配 ./theme/composables/useRuntime.ts
 };

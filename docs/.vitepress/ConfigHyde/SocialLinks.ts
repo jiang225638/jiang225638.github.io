@@ -3,11 +3,11 @@ import { gitee, email, WhatsApp, telegram } from "../theme/icon/icons";
 export const SocialLinks = [
   {
     icon: { svg: gitee },
-    link: "https://gitee.com/onlyonexl/vitepress-theme-teek-one-public-simple",
+    link: "",
   },
   {
     icon: { svg: email },
-    link: "mailto:2675263825@qq.com",
+    link: "mailto:jiang225638@163.com",
   },
   // {
   //   icon: { svg: WhatsApp },
