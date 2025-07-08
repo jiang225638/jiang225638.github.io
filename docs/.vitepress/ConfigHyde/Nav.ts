@@ -270,24 +270,24 @@ export const Nav = [
             `,
         link: '/articleOverview'
       },
-      {
-        text: `
-            <div style="display: flex; align-items: center; gap: 4px;">
-              <img src="/img/nav/登录.svg" alt="" style="width: 16px; height: 16px;">
-              <span>登录页</span>
-            </div>
-            `,
-        link: '/login'
-      },
-      {
-        text: `
-            <div style="display: flex; align-items: center; gap: 4px;">
-              <img src="/img/nav/风险提示.svg" alt="" style="width: 16px; height: 16px;">
-              <span>风险链接提示页</span>
-            </div>
-            `,
-        link: '/risk-link?target=https://onedayxyy.cn/'
-      }
+      // {
+      //   text: `
+      //       <div style="display: flex; align-items: center; gap: 4px;">
+      //         <img src="/img/nav/登录.svg" alt="" style="width: 16px; height: 16px;">
+      //         <span>登录页</span>
+      //       </div>
+      //       `,
+      //   link: '/login'
+      // },
+      // {
+      //   text: `
+      //       <div style="display: flex; align-items: center; gap: 4px;">
+      //         <img src="/img/nav/风险提示.svg" alt="" style="width: 16px; height: 16px;">
+      //         <span>风险链接提示页</span>
+      //       </div>
+      //       `,
+      //   link: '/risk-link?target=https://onedayxyy.cn/'
+      // }
     ]
   },
 
@@ -300,33 +300,33 @@ export const Nav = [
       { text: '🌐网站导航', link: '/websites' },
       { text: '👂留言区', link: '/liuyanqu' },
       { text: '💡思考', link: '/thinking' },
-      {
-        text: `
-            <div style="display: flex; align-items: center; gap: 4px;">
-              <img src="/img/nav/时间轴.svg" alt="" style="width: 16px; height: 16px;">
-              <span>时间轴</span>
-            </div>
-            `,
-        link: 'https://onedayxyy.cn/time-line/'
-      },
-      {
-        text: `
-            <div style="display: flex; align-items: center; gap: 4px;">
-              <img src="/img/nav/网站统计.svg" alt="" style="width: 16px; height: 16px;">
-              <span>网站统计</span>
-            </div>
-            `,
-        link: 'https://umami.onedayxyy.cn/share/DzS4g85V8JkxsNRk/onedayxyy.cn'
-      },
-      {
-        text: `
-            <div style="display: flex; align-items: center; gap: 4px;">
-              <img src="/img/nav/站点监控.svg" alt="" style="width: 16px; height: 16px;">
-              <span>站点监控</span>
-            </div>
-            `,
-        link: 'https://status.onedayxyy.cn/status/monitor'
-      }
+      // {
+      //   text: `
+      //       <div style="display: flex; align-items: center; gap: 4px;">
+      //         <img src="/img/nav/时间轴.svg" alt="" style="width: 16px; height: 16px;">
+      //         <span>时间轴</span>
+      //       </div>
+      //       `,
+      //   link: 'https://onedayxyy.cn/time-line/'
+      // },
+      // {
+      //   text: `
+      //       <div style="display: flex; align-items: center; gap: 4px;">
+      //         <img src="/img/nav/网站统计.svg" alt="" style="width: 16px; height: 16px;">
+      //         <span>网站统计</span>
+      //       </div>
+      //       `,
+      //   link: 'https://umami.onedayxyy.cn/share/DzS4g85V8JkxsNRk/onedayxyy.cn'
+      // },
+      // {
+      //   text: `
+      //       <div style="display: flex; align-items: center; gap: 4px;">
+      //         <img src="/img/nav/站点监控.svg" alt="" style="width: 16px; height: 16px;">
+      //         <span>站点监控</span>
+      //       </div>
+      //       `,
+      //   link: 'https://status.onedayxyy.cn/status/monitor'
+      // }
     ]
   }
 ]
