@@ -148,9 +148,10 @@
         <div class="view-mode">
           <button
             class="view-btn"
-            :class="{ active: viewMode === 'grid' }"
-            @click="viewMode = 'grid'"
+            :class="{ active: viewMode === 'grid', disabled: isTransitioning }"
+            @click="switchViewMode('grid')"
             title="网格视图"
+            :disabled="isTransitioning"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <rect
@@ -189,9 +190,13 @@
           </button>
           <button
             class="view-btn"
-            :class="{ active: viewMode === 'masonry' }"
-            @click="viewMode = 'masonry'"
+            :class="{
+              active: viewMode === 'masonry',
+              disabled: isTransitioning
+            }"
+            @click="switchViewMode('masonry')"
             title="瀑布流视图"
+            :disabled="isTransitioning"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <rect
@@ -479,6 +484,7 @@ const photoItems = ref<HTMLElement[]>([])
 
 // 视图模式
 const viewMode = ref<'grid' | 'masonry'>('grid')
+const isTransitioning = ref(false)
 
 // 搜索和排序
 const searchQuery = ref('')
@@ -496,15 +502,25 @@ const message = ref({
   text: ''
 })
 
-// 计算属性
-const stats = computed(() => localPhotoService.getStats())
+// 统计数据
+const stats = ref({
+  totalPhotos: 0,
+  favoriteCount: 0,
+  tagCount: 0,
+  totalSize: 0,
+  formattedSize: '0 Bytes',
+  averageSize: '0 Bytes'
+})
+
+// 收藏状态缓存
+const favoriteCache = ref(new Set<string>())
 
 const filteredPhotos = computed(() => {
   let result = photos.value
 
   // 收藏过滤
   if (showFavoritesOnly.value) {
-    result = result.filter((photo) => localPhotoService.isFavorite(photo.id))
+    result = result.filter((photo) => favoriteCache.value.has(photo.id))
   }
 
   // 搜索过滤
@@ -521,14 +537,18 @@ const filteredPhotos = computed(() => {
   // 排序
   switch (sortOrder.value) {
     case 'newest':
-      result = result.sort(
-        (a, b) => b.uploadTime.getTime() - a.uploadTime.getTime()
-      )
+      result = result.sort((a, b) => {
+        const timeA = a.uploadTime?.getTime() || 0
+        const timeB = b.uploadTime?.getTime() || 0
+        return timeB - timeA
+      })
       break
     case 'oldest':
-      result = result.sort(
-        (a, b) => a.uploadTime.getTime() - b.uploadTime.getTime()
-      )
+      result = result.sort((a, b) => {
+        const timeA = a.uploadTime?.getTime() || 0
+        const timeB = b.uploadTime?.getTime() || 0
+        return timeA - timeB
+      })
       break
     case 'name-asc':
       result = result.sort((a, b) =>
@@ -552,10 +572,19 @@ const filteredPhotos = computed(() => {
 })
 
 // 方法
-const loadPhotos = () => {
+const loadPhotos = async () => {
   isLoading.value = true
   try {
-    photos.value = localPhotoService.getPhotos()
+    photos.value = await localPhotoService.getPhotos()
+    stats.value = await localPhotoService.getStats()
+
+    // 更新收藏状态缓存
+    favoriteCache.value.clear()
+    for (const photo of photos.value) {
+      if (await localPhotoService.isFavorite(photo.id)) {
+        favoriteCache.value.add(photo.id)
+      }
+    }
   } catch (error) {
     console.error('加载照片失败:', error)
     showMessage('加载照片失败', 'error')
@@ -597,14 +626,62 @@ const handleSort = () => {
   // 排序是通过computed属性实时处理的，这里可以添加额外逻辑
 }
 
-const toggleFavorite = (photo: PhotoItem) => {
-  const isFavorite = localPhotoService.toggleFavorite(photo.id)
+const switchViewMode = async (mode: 'grid' | 'masonry') => {
+  if (viewMode.value === mode || isTransitioning.value) return
+
+  isTransitioning.value = true
+
+  // 淡出动画
+  const gridElement = photoGrid.value
+  if (gridElement) {
+    gridElement.style.opacity = '0'
+    gridElement.style.transform = 'translateY(20px)'
+  }
+
+  // 等待淡出动画完成
+  await new Promise((resolve) => setTimeout(resolve, 200))
+
+  // 切换视图模式
+  viewMode.value = mode
+
+  // 等待DOM更新
+  await nextTick()
+
+  // 初始化新视图
+  if (mode === 'masonry') {
+    setTimeout(initWaterfall, 50)
+  } else {
+    clearWaterfall()
+  }
+
+  // 淡入动画
+  setTimeout(() => {
+    if (gridElement) {
+      gridElement.style.opacity = '1'
+      gridElement.style.transform = 'translateY(0)'
+    }
+    isTransitioning.value = false
+  }, 50)
+}
+
+const toggleFavorite = async (photo: PhotoItem) => {
+  const isFavorite = await localPhotoService.toggleFavorite(photo.id)
+
+  // 更新收藏状态缓存
+  if (isFavorite) {
+    favoriteCache.value.add(photo.id)
+  } else {
+    favoriteCache.value.delete(photo.id)
+  }
+
   showMessage(
     isFavorite
       ? `已添加 "${photo.title}" 到收藏`
       : `已从收藏中移除 "${photo.title}"`,
     'success'
   )
+  // 更新统计数据
+  stats.value = await localPhotoService.getStats()
 }
 
 const downloadPhoto = (photo: PhotoItem) => {
@@ -631,7 +708,8 @@ const hideMessage = () => {
   message.value.visible = false
 }
 
-const formatDate = (date: Date): string => {
+const formatDate = (date?: Date): string => {
+  if (!date) return '未知时间'
   return date.toLocaleDateString('zh-CN', {
     year: 'numeric',
     month: 'short',
@@ -691,27 +769,31 @@ const initWaterfall = async () => {
   const container = photoGrid.value
   const items = photoItems.value
 
-  // 计算列数和宽度 - 响应式
+  // 计算列数和宽度 - 动态响应式
   const containerWidth = container.offsetWidth
-  let itemWidth = 280 // 默认宽度
   let gap = 20 // 默认间距
+  let cols = 4 // 默认列数
 
-  // 响应式调整
-  if (window.innerWidth >= 1400) {
-    itemWidth = 300
+  // 响应式调整列数和间距
+  if (containerWidth >= 1400) {
+    cols = 5
+    gap = 24
+  } else if (containerWidth >= 1200) {
+    cols = 4
     gap = 20
-  } else if (window.innerWidth <= 1024) {
-    itemWidth = 260
+  } else if (containerWidth >= 900) {
+    cols = 3
     gap = 16
-  } else if (window.innerWidth <= 768) {
-    itemWidth = 240
+  } else if (containerWidth >= 600) {
+    cols = 2
     gap = 12
-  } else if (window.innerWidth <= 480) {
-    itemWidth = 160
+  } else {
+    cols = 1
     gap = 8
   }
 
-  const cols = Math.floor((containerWidth + gap) / (itemWidth + gap)) || 1
+  // 根据列数和容器宽度计算实际的项目宽度
+  const itemWidth = Math.floor((containerWidth - gap * (cols - 1)) / cols)
 
   // 初始化列高度数组
   const columnHeights = new Array(cols).fill(0)
@@ -809,13 +891,11 @@ const clearWaterfall = () => {
 
 // 监听器
 watch(
-  [filteredPhotos, viewMode],
+  filteredPhotos,
   async () => {
     await nextTick()
     if (viewMode.value === 'masonry') {
       setTimeout(initWaterfall, 200)
-    } else {
-      clearWaterfall()
     }
   },
   { flush: 'post' }
@@ -824,8 +904,8 @@ watch(
 
 <style scoped>
 .photo-album {
-  max-width: 100vw;
-  margin: 0;
+  max-width: 1400px;
+  margin: 0 auto;
   padding: 1rem 2rem;
   min-height: 100vh;
   background: #fafafa;
@@ -842,9 +922,14 @@ watch(
   background: white;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  max-width: 1400px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .album-title {
+  text-align: center;
   margin: 0 0 1rem 0;
   font-size: 2rem;
   font-weight: 700;
@@ -919,6 +1004,7 @@ watch(
   border: 1px solid #e5e7eb;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   max-width: 1400px;
+  width: 100%;
 }
 
 .toolbar-left,
@@ -950,6 +1036,12 @@ watch(
 .view-btn.active {
   background: #3b82f6;
   color: white;
+}
+
+.view-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .search-box {
@@ -1120,18 +1212,23 @@ watch(
 .photo-grid {
   display: grid;
   gap: 1.5rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .photo-grid.grid-view {
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .photo-grid.masonry-view {
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
+  width: 100%;
 }
 
 .photo-item {
@@ -1142,6 +1239,53 @@ watch(
   transition: all 0.3s ease;
   background: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 照片项目动画延迟 */
+.photo-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.photo-item:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.photo-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.photo-item:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.photo-item:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.photo-item:nth-child(6) {
+  animation-delay: 0.35s;
+}
+.photo-item:nth-child(7) {
+  animation-delay: 0.4s;
+}
+.photo-item:nth-child(8) {
+  animation-delay: 0.45s;
+}
+.photo-item:nth-child(9) {
+  animation-delay: 0.5s;
+}
+.photo-item:nth-child(10) {
+  animation-delay: 0.55s;
+}
+.photo-item:nth-child(n + 11) {
+  animation-delay: 0.6s;
 }
 
 .grid-view .photo-item {
@@ -1165,7 +1309,7 @@ watch(
 
 .masonry-view .photo-item {
   position: absolute;
-  width: 280px;
+  /* 宽度由JavaScript动态设置 */
 }
 
 .grid-view .photo-item {
@@ -1327,27 +1471,37 @@ watch(
 
 /* 响应式设计 */
 @media (min-width: 1400px) {
-  .photo-grid.grid-view {
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  .photo-album {
+    max-width: 1600px;
   }
 
+  .album-header,
+  .toolbar,
+  .photo-grid.grid-view,
   .photo-grid.masonry-view {
     max-width: 1600px;
   }
 
+  .photo-grid.grid-view {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+
   .masonry-view .photo-item {
-    width: 300px;
+    /* 宽度由JavaScript动态设置 */
   }
 }
 
 @media (max-width: 1024px) {
   .photo-album {
     padding: 1rem 1.5rem;
+    max-width: 1024px;
   }
 
+  .album-header,
+  .toolbar,
   .photo-grid.grid-view,
   .photo-grid.masonry-view {
-    max-width: 100%;
+    max-width: 1024px;
   }
 
   .photo-grid.grid-view {
@@ -1355,11 +1509,7 @@ watch(
   }
 
   .masonry-view .photo-item {
-    width: 260px;
-  }
-
-  .toolbar {
-    max-width: 100%;
+    /* 宽度由JavaScript动态设置 */
   }
 }
 
@@ -1367,6 +1517,14 @@ watch(
   .photo-album {
     padding: 0.75rem 1rem;
     background: white;
+    max-width: 768px;
+  }
+
+  .album-header,
+  .toolbar,
+  .photo-grid.grid-view,
+  .photo-grid.masonry-view {
+    max-width: 768px;
   }
 
   .album-header {
@@ -1405,7 +1563,7 @@ watch(
   }
 
   .masonry-view .photo-item {
-    width: 240px;
+    /* 宽度由JavaScript动态设置 */
   }
 }
 
@@ -1413,6 +1571,14 @@ watch(
   .photo-album {
     padding: 0.5rem;
     background: white;
+    max-width: 480px;
+  }
+
+  .album-header,
+  .toolbar,
+  .photo-grid.grid-view,
+  .photo-grid.masonry-view {
+    max-width: 480px;
   }
 
   .album-header {
@@ -1448,7 +1614,7 @@ watch(
   }
 
   .masonry-view .photo-item {
-    width: 160px;
+    /* 宽度由JavaScript动态设置 */
   }
 }
 </style>

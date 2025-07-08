@@ -4,21 +4,21 @@ layout: home
 tk:
   teekHome: false
   features: # 可选的
-    - title: 初见
-      description: 茫茫人海，我们相遇
-      link: / # 可选
-      # imgUrl: /img/web.png # 可选
-      imgUrl: /img/xyy-1.webp # 可选
-    - title: 幸福
-      description: 与你一起，真的幸福
-      link: /
-      # imgUrl: /img/ui.png
-      imgUrl: /img/xyy-2.webp
-    - title: 后来
-      description: 再见竟是，再也不见
-      link: /
-      # imgUrl: /img/other.png
-      imgUrl: /img/xyy-3.webp
+    # - title: 初见
+    #   description: 茫茫人海，我们相遇
+    #   link: / # 可选
+    #   # imgUrl: /img/web.png # 可选
+    #   imgUrl: /img/xyy-1.webp # 可选
+    # - title: 幸福
+    #   description: 与你一起，真的幸福
+    #   link: /
+    #   # imgUrl: /img/ui.png
+    #   imgUrl: /img/xyy-2.webp
+    # - title: 后来
+    #   description: 再见竟是，再也不见
+    #   link: /
+    #   # imgUrl: /img/other.png
+    #   imgUrl: /img/xyy-3.webp
 
 hero:
   name: Teek

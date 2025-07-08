@@ -6,7 +6,7 @@ export interface PhotoItem {
   thumbnailUrl?: string
   title?: string
   description?: string
-  uploadTime: Date
+  uploadTime?: Date
   fileSize?: number
   dimensions?: {
     width: number
