@@ -4,7 +4,8 @@ export async function fetchHitokoto() {
   // const hitokoto = document.querySelector('#hitokoto_text')
   // hitokoto.href = `https://hitokoto.cn/?uuid=${uuid}`
   // hitokoto.innerText = hitokotoText
-  const hitokoto =
-    data.hitokoto + ' — ' + (data.from_who ? data.from_who : data.from)
+  const hitokoto = await (data.hitokoto +
+    ' — ' +
+    (data.from_who ? data.from_who : data.from))
   return hitokoto
 }

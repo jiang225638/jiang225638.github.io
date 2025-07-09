@@ -27,7 +27,10 @@ export const teekDocConfig: TeekConfig = {
   }
 }
 
-const hitokoto = await fetchHitokoto()
+// const getHitokoto = async () => {
+//   const hitokoto = await fetchHitokoto()
+//   return hitokoto
+// }
 
 // 博客基础配置
 const teekBlogCommonConfig: TeekConfig = {
@@ -39,7 +42,7 @@ const teekBlogCommonConfig: TeekConfig = {
     pureBgColor: '#28282d', // Banner 背景色。bgStyle 为 pure 时生效
     imgSrc: Wallpaper,
     descStyle: 'types',
-    description: hitokoto, // 打字机描述信息,
+    description: await fetchHitokoto(), // 打字机描述信息,
     bgStyle: 'fullImg',
     mask: false
   },
