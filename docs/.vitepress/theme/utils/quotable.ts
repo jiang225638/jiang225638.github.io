@@ -18,7 +18,7 @@ function getRandomDefaultQuote(): string {
 // 异步获取一言
 async function fetchHitokoto(): Promise<string> {
   try {
-    const response = await fetch('https://international.v1.hitokoto.cn/?c=l', {
+    const response = await fetch('https://international.v1.hitokoto.cn', {
       headers: {
         'User-Agent':
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'

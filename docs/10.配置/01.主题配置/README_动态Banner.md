@@ -1,3 +1,12 @@
+---
+date: 2025-07-09 09:58:52
+title: README_动态Banner
+permalink: /pages/01035b
+categories:
+  - 配置
+  - 主题配置
+coverImg: /img/bg/10.webp
+---
 # 动态 Banner 描述功能
 
 ## 功能概述

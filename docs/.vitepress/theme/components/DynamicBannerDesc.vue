@@ -6,8 +6,8 @@
       <span v-if="showCursor" class="cursor">|</span>
     </div>
     <div v-if="showRefreshButton" class="refresh-controls">
-      <button 
-        @click="refreshHitokoto" 
+      <button
+        @click="refreshHitokoto"
         :disabled="isLoading"
         class="refresh-btn"
         :style="{ color: textColor }"
@@ -67,8 +67,8 @@ const showCursor = ref(true)
 // 打字机相关状态
 const typeIndex = ref(0)
 const isDeleting = ref(false)
-const typeTimer = ref<NodeJS.Timeout | null>(null)
-const cursorTimer = ref<NodeJS.Timeout | null>(null)
+const typeTimer = ref<number | null>(null)
+const cursorTimer = ref<number | null>(null)
 
 // 计算属性
 const isTypingMode = computed(() => props.enableTyping)
@@ -98,12 +98,12 @@ const typeWriter = () => {
 
   isTyping.value = true
   const text = currentQuote.value
-  
+
   if (!isDeleting.value && typeIndex.value <= text.length) {
     // 打字阶段
     displayText.value = text.substring(0, typeIndex.value)
     typeIndex.value++
-    
+
     if (typeIndex.value <= text.length) {
       typeTimer.value = setTimeout(typeWriter, props.typeSpeed)
     } else {
@@ -119,7 +119,7 @@ const typeWriter = () => {
     // 删除阶段
     displayText.value = text.substring(0, typeIndex.value)
     typeIndex.value--
-    
+
     if (typeIndex.value >= 0) {
       typeTimer.value = setTimeout(typeWriter, props.deleteSpeed)
     } else {
@@ -152,12 +152,12 @@ const startTypeWriter = () => {
 // 获取新的一言
 const refreshHitokoto = async () => {
   if (isLoading.value) return
-  
+
   isLoading.value = true
   try {
     const newQuote = await getHitokoto()
     currentQuote.value = newQuote
-    
+
     if (isTypingMode.value) {
       startTypeWriter()
     } else {
@@ -182,7 +182,7 @@ const initialize = async () => {
       // 使用fallback数据
     }
   }
-  
+
   // 启动显示效果
   if (isTypingMode.value) {
     startTypeWriter()
@@ -230,12 +230,59 @@ defineExpose({
 .typing-content,
 .static-content {
   display: inline-block;
+  /* Fallback color for browsers that don't support gradient text */
+  color: #ffffff;
+  /* Enhanced visibility with shadow */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 107, 107, 0.5), 0 0 30px rgba(78, 205, 196, 0.3);
+
+  /* Modern gradient effect for supported browsers */
+  background: linear-gradient(
+    45deg,
+    #ff6b6b 0%,
+    #4ecdc4 25%,
+    #45b7d1 50%,
+    #96ceb4 75%,
+    #ffeaa7 100%
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Only hide text color if gradient is supported */
+  @supports (-webkit-background-clip: text) {
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: none;
+  }
+
+  animation: rainbowMove 4s ease-in-out infinite;
+  font-weight: 600;
 }
 
 .cursor {
   display: inline-block;
-  margin-left: 2px;
-  font-weight: normal;
+  margin-left: 3px;
+  font-weight: bold;
+  font-size: 1.1em;
+
+  /* Fallback styling for the cursor */
+  color: #4ecdc4;
+  text-shadow: 0 0 8px rgba(78, 205, 196, 0.8),
+    0 0 16px rgba(255, 107, 107, 0.4);
+
+  /* Gradient styling for modern browsers */
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Only hide text color if gradient is supported */
+  @supports (-webkit-background-clip: text) {
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
   animation: none;
 }
 
@@ -281,8 +328,24 @@ defineExpose({
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rainbowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* 响应式设计 */
@@ -291,9 +354,9 @@ defineExpose({
     font-size: 1.2rem !important;
     padding: 0 1rem;
   }
-  
+
   .refresh-controls {
     opacity: 1; /* 移动端始终显示 */
   }
 }
-</style> 
+</style>

@@ -7,8 +7,41 @@
 
 .dynamic-banner-desc .typing-text {
   font-family: inherit;
-  font-weight: inherit;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.dynamic-banner-desc .typing-text .typing-content,
+.dynamic-banner-desc .typing-text .static-content {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 107, 107, 0.5), 0 0 30px rgba(78, 205, 196, 0.3) !important;
+  background: linear-gradient(45deg, #ff6b6b 0%, #4ecdc4 25%, #45b7d1 50%, #96ceb4 75%, #ffeaa7 100%) !important;
+  background-size: 300% 300% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+@supports (-webkit-background-clip: text) {
+  .dynamic-banner-desc .typing-text .typing-content,
+  .dynamic-banner-desc .typing-text .static-content {
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    text-shadow: none !important;
+  }
+}
+
+.dynamic-banner-desc .typing-text .cursor {
+  color: #4ecdc4 !important;
+  text-shadow: 0 0 8px rgba(78, 205, 196, 0.8), 0 0 16px rgba(255, 107, 107, 0.4) !important;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+@supports (-webkit-background-clip: text) {
+  .dynamic-banner-desc .typing-text .cursor {
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+  }
 }
 
 .dynamic-banner-desc .refresh-btn {
@@ -34,9 +67,50 @@
   line-height: inherit;
 }
 
-.tk-banner-content__content__desc .dynamic-banner-desc .typing-text span {
-  background-image: inherit;
-  -webkit-background-clip: inherit;
-  background-clip: inherit;
-  color: inherit;
+.tk-banner-content__content__desc .dynamic-banner-desc .typing-text .typing-content,
+.tk-banner-content__content__desc .dynamic-banner-desc .typing-text .static-content {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 107, 107, 0.5), 0 0 30px rgba(78, 205, 196, 0.3) !important;
+  background: linear-gradient(45deg, #ff6b6b 0%, #4ecdc4 25%, #45b7d1 50%, #96ceb4 75%, #ffeaa7 100%) !important;
+  background-size: 300% 300% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  animation: rainbowMove 4s ease-in-out infinite !important;
+}
+
+@supports (-webkit-background-clip: text) {
+  .tk-banner-content__content__desc .dynamic-banner-desc .typing-text .typing-content,
+  .tk-banner-content__content__desc .dynamic-banner-desc .typing-text .static-content {
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    text-shadow: none !important;
+  }
+}
+
+.tk-banner-content__content__desc .dynamic-banner-desc .typing-text .cursor {
+  color: #4ecdc4 !important;
+  text-shadow: 0 0 8px rgba(78, 205, 196, 0.8), 0 0 16px rgba(255, 107, 107, 0.4) !important;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+@supports (-webkit-background-clip: text) {
+  .tk-banner-content__content__desc .dynamic-banner-desc .typing-text .cursor {
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+  }
+}
+
+@keyframes rainbowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

@@ -12,8 +12,56 @@
   .typing-text {
     // 继承主题的文字样式
     font-family: inherit;
-    font-weight: inherit;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    // 不继承font-weight，使用组件自定义的渐变效果
+    // text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); // 移除text-shadow以支持渐变文字
+
+    // 确保彩色文字效果不被覆盖
+    .typing-content,
+    .static-content {
+      // Fallback颜色，确保在不支持渐变的浏览器中文字可见
+      color: #ffffff !important;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 107, 107, 0.5), 0 0 30px rgba(78, 205, 196, 0.3) !important;
+
+      // 强制应用彩色渐变，覆盖主题默认颜色
+      background: linear-gradient(
+        45deg,
+        #ff6b6b 0%,
+        #4ecdc4 25%,
+        #45b7d1 50%,
+        #96ceb4 75%,
+        #ffeaa7 100%
+      ) !important;
+      background-size: 300% 300% !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+
+      // 只在支持的浏览器中隐藏文字颜色
+      @supports (-webkit-background-clip: text) {
+        -webkit-text-fill-color: transparent !important;
+        color: transparent !important;
+        text-shadow: none !important;
+      }
+    }
+
+    .cursor {
+      // Fallback颜色，确保光标在不支持渐变的浏览器中可见
+      color: #4ecdc4 !important;
+      text-shadow: 0 0 8px rgba(78, 205, 196, 0.8),
+        0 0 16px rgba(255, 107, 107, 0.4) !important;
+
+      // 确保光标也使用彩色效果
+      background: linear-gradient(45deg, #ff6b6b, #4ecdc4) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+
+      // 只在支持的浏览器中隐藏文字颜色
+      @supports (-webkit-background-clip: text) {
+        -webkit-text-fill-color: transparent !important;
+        color: transparent !important;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+      }
+    }
   }
 
   // 刷新按钮样式优化
@@ -48,15 +96,69 @@
   }
 }
 
-// 适配渐变文字样式（如果启用了）
+// 覆盖主题的渐变文字样式，使用我们自己的彩色效果
 .tk-banner-content__content__desc {
   .dynamic-banner-desc {
-    .typing-text span {
-      // 如果主题有渐变文字效果，确保我们的组件也能使用
-      background-image: inherit;
-      -webkit-background-clip: inherit;
-      background-clip: inherit;
-      color: inherit;
+    .typing-text {
+      .typing-content,
+      .static-content {
+        // Fallback样式
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+          0 0 20px rgba(255, 107, 107, 0.5), 0 0 30px rgba(78, 205, 196, 0.3) !important;
+
+        // 覆盖主题默认的渐变效果，使用我们的彩色渐变
+        background: linear-gradient(
+          45deg,
+          #ff6b6b 0%,
+          #4ecdc4 25%,
+          #45b7d1 50%,
+          #96ceb4 75%,
+          #ffeaa7 100%
+        ) !important;
+        background-size: 300% 300% !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        animation: rainbowMove 4s ease-in-out infinite !important;
+
+        // 只在支持的浏览器中隐藏文字颜色
+        @supports (-webkit-background-clip: text) {
+          -webkit-text-fill-color: transparent !important;
+          color: transparent !important;
+          text-shadow: none !important;
+        }
+      }
+
+      .cursor {
+        // Fallback样式
+        color: #4ecdc4 !important;
+        text-shadow: 0 0 8px rgba(78, 205, 196, 0.8),
+          0 0 16px rgba(255, 107, 107, 0.4) !important;
+
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+
+        // 只在支持的浏览器中隐藏文字颜色
+        @supports (-webkit-background-clip: text) {
+          -webkit-text-fill-color: transparent !important;
+          color: transparent !important;
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+        }
+      }
     }
+  }
+}
+
+// 添加彩虹动画关键帧
+@keyframes rainbowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
