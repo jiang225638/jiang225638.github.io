@@ -5,7 +5,7 @@ import { FriendLink } from '../../ConfigHyde/FriendLink' // 导入FriendLink模�
 import { HitokotoDate } from '../../ConfigHyde/HitokotoDate' // 导入HitokotoData模块
 import { Wallpaper } from '../../ConfigHyde/Wallaper' // 导入Wallaper模块
 import { SocialDate } from '../../ConfigHyde/SocialDate' // 导入SocialDate社交信息模块
-import { fetchHitokoto } from '../utils/quotable'
+import { hitokoto } from '../utils/quotable'
 
 // 文档配置
 export const teekDocConfig: TeekConfig = {
@@ -42,7 +42,7 @@ const teekBlogCommonConfig: TeekConfig = {
     pureBgColor: '#28282d', // Banner 背景色。bgStyle 为 pure 时生效
     imgSrc: Wallpaper,
     descStyle: 'types',
-    description: await fetchHitokoto(), // 打字机描述信息,
+    description: hitokoto, // 打字机描述信息,
     bgStyle: 'fullImg',
     mask: false
   },
