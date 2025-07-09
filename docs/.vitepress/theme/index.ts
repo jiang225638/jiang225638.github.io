@@ -36,6 +36,7 @@ import 'vitepress-theme-teek/tk-plus/banner-full-img-scale.scss' // Banner 全�
 import './styles/code-bg.scss'
 import './styles/iframe.scss'
 import './style/index.scss' // 引入One全局样式
+import './style/dynamic-banner.scss' // 引入动态Banner样式
 
 // import "virtual:group-icons.css"; //代码组图标样式
 import 'vitepress-markdown-timeline/dist/theme/index.css' // 引入时间线样式
