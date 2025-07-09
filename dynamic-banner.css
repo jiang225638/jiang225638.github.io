@@ -7,6 +7,8 @@
 
 .dynamic-banner-desc .typing-text {
   font-family: inherit;
+  position: relative;
+  z-index: 10;
 }
 
 .dynamic-banner-desc .typing-text .typing-content,
@@ -65,6 +67,22 @@
 
 .tk-banner-content__content .dynamic-banner-desc .typing-text {
   line-height: inherit;
+}
+
+.tk-banner-content__content__desc {
+  background: none !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.tk-banner-content__content__desc .dynamic-banner-desc .typing-text {
+  background: none !important;
+  background-color: transparent !important;
 }
 
 .tk-banner-content__content__desc .dynamic-banner-desc .typing-text .typing-content,

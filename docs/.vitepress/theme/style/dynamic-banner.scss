@@ -15,6 +15,10 @@
     // 不继承font-weight，使用组件自定义的渐变效果
     // text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); // 移除text-shadow以支持渐变文字
 
+    // 确保文字容器在白色背景之上
+    position: relative;
+    z-index: 10;
+
     // 确保彩色文字效果不被覆盖
     .typing-content,
     .static-content {
@@ -96,10 +100,25 @@
   }
 }
 
-// 覆盖主题的渐变文字样式，使用我们自己的彩色效果
+// 覆盖主题的渐变文字样式，移除白色透明背景
 .tk-banner-content__content__desc {
+  // 完全移除白色透明背景
+  background: none !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+
   .dynamic-banner-desc {
+    // 简化结构，不再需要复杂的层级
     .typing-text {
+      // 确保文字容器透明
+      background: none !important;
+      background-color: transparent !important;
+
       .typing-content,
       .static-content {
         // Fallback样式

@@ -3,7 +3,7 @@
     <div class="typing-text" :style="{ color: textColor, fontSize: fontSize }">
       <span v-if="isTyping" class="typing-content">{{ displayText }}</span>
       <span v-else class="static-content">{{ displayText }}</span>
-      <span v-if="showCursor" class="cursor">|</span>
+      <span class="cursor">|</span>
     </div>
     <div v-if="showRefreshButton" class="refresh-controls">
       <button
@@ -62,32 +62,16 @@ const displayText = ref('')
 const currentQuote = ref(fallbackHitokoto)
 const isLoading = ref(false)
 const isTyping = ref(false)
-const showCursor = ref(true)
 
 // 打字机相关状态
 const typeIndex = ref(0)
 const isDeleting = ref(false)
 const typeTimer = ref<number | null>(null)
-const cursorTimer = ref<number | null>(null)
 
 // 计算属性
 const isTypingMode = computed(() => props.enableTyping)
 
-// 光标闪烁
-const startCursorBlink = () => {
-  if (cursorTimer.value) clearInterval(cursorTimer.value)
-  cursorTimer.value = setInterval(() => {
-    showCursor.value = !showCursor.value
-  }, 530)
-}
-
-const stopCursorBlink = () => {
-  if (cursorTimer.value) {
-    clearInterval(cursorTimer.value)
-    cursorTimer.value = null
-  }
-  showCursor.value = true
-}
+// 光标现在由CSS动画控制，不再需要JavaScript
 
 // 打字机效果
 const typeWriter = () => {
@@ -107,10 +91,8 @@ const typeWriter = () => {
     if (typeIndex.value <= text.length) {
       typeTimer.value = setTimeout(typeWriter, props.typeSpeed)
     } else {
-      // 打字完成，开始光标闪烁
-      startCursorBlink()
+      // 打字完成，等待后开始删除
       setTimeout(() => {
-        stopCursorBlink()
         isDeleting.value = true
         typeWriter()
       }, props.pauseTime)
@@ -136,7 +118,6 @@ const stopTypeWriter = () => {
     clearTimeout(typeTimer.value)
     typeTimer.value = null
   }
-  stopCursorBlink()
   isTyping.value = false
 }
 
@@ -213,6 +194,7 @@ defineExpose({
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  /* 组件基础样式 */
 }
 
 .typing-text {
@@ -225,6 +207,16 @@ defineExpose({
   line-height: 1.6;
   word-break: break-word;
   hyphens: auto;
+  /* 文字容器基础样式 */
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  display: inline-block !important;
+  position: relative !important;
+  z-index: 1 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
 }
 
 .typing-content,
@@ -263,8 +255,15 @@ defineExpose({
 .cursor {
   display: inline-block;
   margin-left: 3px;
-  font-weight: bold;
-  font-size: 1.1em;
+  /* 与文字保持相同的字体属性，避免抖动 */
+  font-weight: 600; /* 与文字相同 */
+  font-size: 1em; /* 与文字相同大小 */
+  line-height: inherit; /* 继承行高 */
+  vertical-align: baseline; /* 确保基线对齐 */
+
+  /* 固定宽度，确保布局稳定 */
+  width: 16px;
+  min-width: 3px;
 
   /* Fallback styling for the cursor */
   color: #4ecdc4;
@@ -283,12 +282,14 @@ defineExpose({
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
 
-  animation: none;
+  /* 使用CSS动画实现闪烁，避免DOM操作引起的抖动 */
+  animation: cursorBlink 1.2s ease-in-out infinite;
 }
 
 .refresh-controls {
   opacity: 0;
   transition: opacity 0.3s ease;
+  /* 刷新按钮样式 */
 }
 
 .dynamic-banner-desc:hover .refresh-controls {
@@ -345,6 +346,17 @@ defineExpose({
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes cursorBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
   }
 }
 
