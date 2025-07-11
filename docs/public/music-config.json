@@ -1,0 +1,42 @@
+{
+  "musicLibrary": [
+    {
+      "id": "47062555",
+      "name": "女儿国.mp3",
+      "title": "女儿国",
+      "artist": "张靓颖",
+      "album": "西游记女儿国 电影原声带",
+      "duration": 240,
+      "size": 4860649,
+      "format": "MP3",
+      "cover": "",
+      "url": "/music/女儿国.mp3"
+    },
+    {
+      "id": "c56e2bbb",
+      "name": "燕归巢.mp3",
+      "title": "燕归巢",
+      "artist": "许嵩",
+      "album": "青年晚报",
+      "duration": 220,
+      "size": 3381489,
+      "format": "MP3",
+      "cover": "",
+      "url": "/music/燕归巢.mp3"
+    }
+  ],
+  "settings": {
+    "autoScanEnabled": false,
+    "supportedFormats": [
+      ".mp3",
+      ".flac",
+      ".wav",
+      ".ogg",
+      ".m4a",
+      ".aac",
+      ".wma"
+    ],
+    "defaultCover": "",
+    "musicDirectory": "/music/"
+  }
+}

@@ -12,6 +12,9 @@ import confetti from './components/Confetti.vue' //导入五彩纸屑组件
 import PhotoAlbum from './components/PhotoAlbum/PhotoAlbum.vue'
 import PhotoViewer from './components/PhotoAlbum/PhotoViewer.vue'
 
+// 音乐播放器组件导入
+import MusicPlayerPage from './components/MusicPlayerPage.vue'
+
 // Teek 在线主题包引用（需安装 Teek 在线版本）
 import 'vitepress-theme-teek/index.css' // 引入主题样式
 import 'vitepress-theme-teek/theme-chalk/tk-code-block-mobile.css' // 引入移动端代码块样式
@@ -54,6 +57,9 @@ export default {
     // 注册相册组件
     app.component('PhotoAlbum', PhotoAlbum)
     app.component('PhotoViewer', PhotoViewer)
+
+    // 注册音乐播放器组件
+    app.component('MusicPlayerPage', MusicPlayerPage)
 
     // 非SSR环境下配置路由进度条
     // @ts-ignore-error

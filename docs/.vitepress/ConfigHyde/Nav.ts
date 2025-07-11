@@ -99,7 +99,7 @@ export const Nav = [
                   <span>音乐</span>
                 </div>
                 `,
-            link: '/music'
+            link: '/04.音乐/index.md'
           }
         ]
       },
@@ -164,24 +164,7 @@ export const Nav = [
             `,
         link: '/articleOverview'
       }
-      // {
-      //   text: `
-      //       <div style="display: flex; align-items: center; gap: 4px;">
-      //         <img src="/img/nav/登录.svg" alt="" style="width: 16px; height: 16px;">
-      //         <span>登录页</span>
-      //       </div>
-      //       `,
-      //   link: '/login'
-      // },
-      // {
-      //   text: `
-      //       <div style="display: flex; align-items: center; gap: 4px;">
-      //         <img src="/img/nav/风险提示.svg" alt="" style="width: 16px; height: 16px;">
-      //         <span>风险链接提示页</span>
-      //       </div>
-      //       `,
-      //   link: '/risk-link?target=https://onedayxyy.cn/'
-      // }
+      
     ]
   },
 
@@ -192,7 +175,7 @@ export const Nav = [
       { text: '👋关于我', link: '/resume' },
       { text: '🎉关于本站', link: '/about-website' },
       { text: '🌐网站导航', link: '/websites' },
-      { text: '👂留言区', link: '/liuyanqu' },
+      // { text: '👂留言区', link: '/liuyanqu' },
       { text: '💡思考', link: '/thinking' }
       // {
       //   text: `
