@@ -65,16 +65,6 @@
           <span class="stat-item">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                stroke="currentColor"
-                stroke-width="2"
-              />
-            </svg>
-            {{ stats.favoriteCount }} 收藏
-          </span>
-          <span class="stat-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path
                 d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"
                 stroke="currentColor"
                 stroke-width="2"
@@ -259,25 +249,6 @@
       </div>
 
       <div class="toolbar-right">
-        <div class="filter-buttons">
-          <button
-            class="filter-btn"
-            :class="{ active: showFavoritesOnly }"
-            @click="toggleFavoritesFilter"
-            title="只显示收藏"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                :fill="showFavoritesOnly ? 'currentColor' : 'none'"
-                stroke="currentColor"
-                stroke-width="2"
-              />
-            </svg>
-            收藏
-          </button>
-        </div>
-
         <div class="sort-dropdown">
           <select v-model="sortOrder" @change="handleSort">
             <option value="newest">最新优先</option>
@@ -404,41 +375,6 @@
                 </span>
               </div>
             </div>
-
-            <div class="photo-actions">
-              <button
-                class="photo-action-btn"
-                :class="{ active: localPhotoService.isFavorite(photo.id) }"
-                @click.stop="toggleFavorite(photo)"
-                title="收藏"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                    :fill="
-                      localPhotoService.isFavorite(photo.id)
-                        ? 'currentColor'
-                        : 'none'
-                    "
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                </svg>
-              </button>
-              <button
-                class="photo-action-btn"
-                @click.stop="downloadPhoto(photo)"
-                title="下载"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M12 15L7 10H11V3H13V10H17L12 15Z"
-                    fill="currentColor"
-                  />
-                  <path d="M20 18H4V20H20V18Z" fill="currentColor" />
-                </svg>
-              </button>
-            </div>
           </div>
         </div>
 
@@ -489,7 +425,6 @@ const isTransitioning = ref(false)
 // 搜索和排序
 const searchQuery = ref('')
 const sortOrder = ref<SortOrder>('newest')
-const showFavoritesOnly = ref(false)
 
 // 查看器
 const viewerVisible = ref(false)
@@ -505,23 +440,14 @@ const message = ref({
 // 统计数据
 const stats = ref({
   totalPhotos: 0,
-  favoriteCount: 0,
   tagCount: 0,
   totalSize: 0,
   formattedSize: '0 Bytes',
   averageSize: '0 Bytes'
 })
 
-// 收藏状态缓存
-const favoriteCache = ref(new Set<string>())
-
 const filteredPhotos = computed(() => {
   let result = photos.value
-
-  // 收藏过滤
-  if (showFavoritesOnly.value) {
-    result = result.filter((photo) => favoriteCache.value.has(photo.id))
-  }
 
   // 搜索过滤
   if (searchQuery.value.trim()) {
@@ -577,14 +503,6 @@ const loadPhotos = async () => {
   try {
     photos.value = await localPhotoService.getPhotos()
     stats.value = await localPhotoService.getStats()
-
-    // 更新收藏状态缓存
-    favoriteCache.value.clear()
-    for (const photo of photos.value) {
-      if (await localPhotoService.isFavorite(photo.id)) {
-        favoriteCache.value.add(photo.id)
-      }
-    }
   } catch (error) {
     console.error('加载照片失败:', error)
     showMessage('加载照片失败', 'error')
@@ -616,10 +534,6 @@ const clearSearch = () => {
 
 const searchByTag = (tag: string) => {
   searchQuery.value = tag
-}
-
-const toggleFavoritesFilter = () => {
-  showFavoritesOnly.value = !showFavoritesOnly.value
 }
 
 const handleSort = () => {
@@ -662,33 +576,6 @@ const switchViewMode = async (mode: 'grid' | 'masonry') => {
     }
     isTransitioning.value = false
   }, 50)
-}
-
-const toggleFavorite = async (photo: PhotoItem) => {
-  const isFavorite = await localPhotoService.toggleFavorite(photo.id)
-
-  // 更新收藏状态缓存
-  if (isFavorite) {
-    favoriteCache.value.add(photo.id)
-  } else {
-    favoriteCache.value.delete(photo.id)
-  }
-
-  showMessage(
-    isFavorite
-      ? `已添加 "${photo.title}" 到收藏`
-      : `已从收藏中移除 "${photo.title}"`,
-    'success'
-  )
-  // 更新统计数据
-  stats.value = await localPhotoService.getStats()
-}
-
-const downloadPhoto = (photo: PhotoItem) => {
-  const link = document.createElement('a')
-  link.href = photo.url
-  link.download = photo.title || 'photo'
-  link.click()
 }
 
 const handleImageError = (e: Event) => {
@@ -1078,35 +965,6 @@ watch(
   font-size: 1.125rem;
 }
 
-.filter-buttons {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.filter-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  background: white;
-  color: #6b7280;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.875rem;
-}
-
-.filter-btn.active {
-  background: #eff6ff;
-  color: #1d4ed8;
-  border-color: #3b82f6;
-}
-
-.filter-btn:hover {
-  background: #f3f4f6;
-}
-
 .sort-dropdown select {
   padding: 0.5rem 0.75rem;
   border: 1px solid #d1d5db;
@@ -1376,36 +1234,6 @@ watch(
 
 .photo-item:hover .photo-overlay {
   opacity: 1;
-}
-
-.photo-actions {
-  display: flex;
-  gap: 0.5rem;
-  align-self: flex-end;
-}
-
-.photo-action-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: none;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  backdrop-filter: blur(10px);
-}
-
-.photo-action-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.photo-action-btn.active {
-  background: rgba(239, 68, 68, 0.8);
-  color: white;
 }
 
 .photo-info {

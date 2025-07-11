@@ -51,124 +51,18 @@ export const Nav = [
                 </div>
                 `,
             link: '/02.前端/122.Css.md'
+          },
+          {
+            text: `
+                <div style="display: flex; align-items: center; gap: 4px;">
+                  <img src="/img/nav/css.png" alt="" style="width: 16px; height: 16px;">
+                  <span>天地图</span>
+                </div>
+                `,
+            link: '/02.前端/124.天地图.md'
           }
         ]
       }
-      // {
-      //   // 分组标题3
-      //   text: '编程',
-      //   items: [
-      //     {
-      //       text: `
-      //           <div style="display: flex; align-items: center; gap: 4px;">
-      //             <img src="/img/nav/python.png" alt="" style="width: 16px; height: 16px;">
-      //             <span>Python</span>
-      //           </div>
-      //           `,
-      //       link: '/python'
-      //     },
-      //     {
-      //       text: `
-      //           <div style="display: flex; align-items: center; gap: 4px;">
-      //             <img src="/img/nav/go.svg" alt="" style="width: 16px; height: 16px;">
-      //             <span>Go</span>
-      //           </div>
-      //           `,
-      //       link: '/go'
-      //     }
-      //   ]
-      // },
-      // {
-      //   text: '专题',
-      //   items: [
-      //     {
-      //       text: `
-      //           <div style="display: flex; align-items: center; gap: 4px;">
-      //             <img src="/img/nav/博客.svg" alt="" style="width: 16px; height: 16px;">
-      //             <span>博客搭建</span>
-      //           </div>
-      //           `,
-      //       link: '/blog'
-      //     },
-      //     {
-      //       text: `
-      //           <div style="display: flex; align-items: center; gap: 4px;">
-      //             <img src="/img/nav/前端demo.svg" alt="" style="width: 16px; height: 16px;">
-      //             <span>前端demo</span>
-      //           </div>
-      //           `,
-      //       link: '/qianduan-demo'
-      //     },
-      //     {
-      //       text: `
-      //           <div style="display: flex; align-items: center; gap: 4px;">
-      //             <img src="/img/nav/Git.svg" alt="" style="width: 16px; height: 16px;">
-      //             <span>Git</span>
-      //           </div>
-      //           `,
-      //       link: '/git'
-      //     },
-      //     {
-      //       text: `
-      //           <div style="display: flex; align-items: center; gap: 4px;">
-      //             <img src="/img/nav/面试.svg" alt="" style="width: 16px; height: 16px;">
-      //             <span>面试</span>
-      //           </div>
-      //           `,
-      //       link: '/mianshi'
-      //     },
-      //     {
-      //       text: `
-      //           <div style="display: flex; align-items: center; gap: 4px;">
-      //             <img src="/img/nav/NAS.svg" alt="" style="width: 16px; height: 16px;">
-      //             <span>NAS</span>
-      //           </div>
-      //           `,
-      //       link: '/NAS'
-      //     },
-      //     {
-      //       text: `
-      //           <div style="display: flex; align-items: center; gap: 4px;">
-      //             <img src="/img/nav/脚本.svg" alt="" style="width: 16px; height: 16px;">
-      //             <span>脚本</span>
-      //           </div>
-      //           `,
-      //       link: '/jiaoben'
-      //     },
-      //     {
-      //       text: `
-      //           <div style="display: flex; align-items: center; gap: 4px;">
-      //             <img src="/img/nav/工具.svg" alt="" style="width: 16px; height: 16px;">
-      //             <span>工具</span>
-      //           </div>
-      //           `,
-      //       link: '/tools'
-      //     }
-      //   ]
-      // },
-      // {
-      //   text: '开源项目',
-      //   items: [
-      //     {
-      //       text: `
-      //           <div style="display: flex; align-items: center; gap: 4px;">
-      //             <img src="/img/nav/teek.svg" alt="" style="width: 16px; height: 16px;">
-      //             <span>Teek-one</span>
-      //           </div>
-      //           `,
-      //       link: '/teek'
-      //     },
-      //     {
-      //       text: `
-      //           <div style="display: flex; align-items: center; gap: 4px;">
-      //             <img src="/img/nav/Typora.svg" alt="" style="width: 16px; height: 16px;">
-      //             <span>Typora-one</span>
-      //           </div>
-      //           `,
-      //       link: '/typora-theme-one'
-      //     }
-      //   ]
-      // }
     ]
   },
 
@@ -269,7 +163,7 @@ export const Nav = [
             </div>
             `,
         link: '/articleOverview'
-      },
+      }
       // {
       //   text: `
       //       <div style="display: flex; align-items: center; gap: 4px;">
@@ -299,7 +193,7 @@ export const Nav = [
       { text: '🎉关于本站', link: '/about-website' },
       { text: '🌐网站导航', link: '/websites' },
       { text: '👂留言区', link: '/liuyanqu' },
-      { text: '💡思考', link: '/thinking' },
+      { text: '💡思考', link: '/thinking' }
       // {
       //   text: `
       //       <div style="display: flex; align-items: center; gap: 4px;">
