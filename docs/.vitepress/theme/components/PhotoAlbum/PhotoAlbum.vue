@@ -795,7 +795,6 @@ watch(
   margin: 0 auto;
   padding: 1rem 2rem;
   min-height: 100vh;
-  background: #fafafa;
 }
 
 /* 相册头部 */
