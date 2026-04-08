@@ -6,30 +6,6 @@ export const Nav = [
   {
     text: '🗃️笔记',
     items: [
-      //   {
-      //     // 分组标题1
-      //     text: '运维',
-      //     items: [
-      //       {
-      //         text: `
-      //             <div style="display: flex; align-items: center; gap: 4px;">
-      //               <img src="/img/nav/linux.svg" alt="" style="width: 16px; height: 16px;">
-      //               <span>Linux</span>
-      //             </div>
-      //             `,
-      //         link: '/linux'
-      //       },
-      //       {
-      //         text: `
-      //             <div style="display: flex; align-items: center; gap: 4px;">
-      //               <img src="/img/nav/nginx.png" alt="" style="width: 16px; height: 16px;">
-      //               <span>Nginx</span>
-      //             </div>
-      //             `,
-      //         link: '/nginx'
-      //       }
-      //     ]
-      //   },
       {
         // 分组标题2
         text: '前端',
@@ -111,10 +87,10 @@ export const Nav = [
             text: `
                 <div style="display: flex; align-items: center; gap: 4px;">
                   <img src="/img/nav/精神小屋.svg" alt="" style="width: 16px; height: 16px;">
-                  <span>精神小屋</span>
+                  <span>奋斗记录</span>
                 </div>
                 `,
-            link: '/love'
+            link: '/22.奋斗记录'
           },
           {
             text: `
@@ -164,7 +140,6 @@ export const Nav = [
             `,
         link: '/articleOverview'
       }
-      
     ]
   },
 
